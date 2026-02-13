@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-de="Auswertungen – Financer Docs" data-en="Analytics – Financer Docs">Auswertungen – Financer Docs</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menü">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="../index.html" class="header-logo">
+        <img src="../assets/logo.png" alt="Financer">
+        <span>Docs</span>
+      </a>
+    </div>
+    <div class="header-links">
+      <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+      <a href="https://financer.getbugio.com" class="btn-bug" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Erste Schritte</span><span lang="en">Getting Started</span></div>
+      <a href="../index.html" class="sidebar-link"><span lang="de">Übersicht</span><span lang="en">Overview</span></a>
+      <a href="setup.html" class="sidebar-link"><span lang="de">Ersteinrichtung</span><span lang="en">Initial Setup</span></a>
+      <a href="login.html" class="sidebar-link"><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Bedienung</span><span lang="en">Usage</span></div>
+      <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+      <a href="transactions.html" class="sidebar-link"><span lang="de">Transaktionen</span><span lang="en">Transactions</span></a>
+      <a href="recurring.html" class="sidebar-link"><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></a>
+      <a href="accounts.html" class="sidebar-link"><span lang="de">Konten</span><span lang="en">Accounts</span></a>
+      <a href="categories.html" class="sidebar-link"><span lang="de">Kategorien</span><span lang="en">Categories</span></a>
+      <a href="analytics.html" class="sidebar-link active"><span lang="de">Auswertungen</span><span lang="en">Analytics</span></a>
+      <a href="creditcards.html" class="sidebar-link"><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Sonstiges</span><span lang="en">Other</span></div>
+      <a href="settings.html" class="sidebar-link"><span lang="de">Einstellungen</span><span lang="en">Settings</span></a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">Docs</a><span>/</span><span lang="de">Auswertungen</span><span lang="en">Analytics</span>
+      </div>
+
+      <h1><span lang="de">Auswertungen</span><span lang="en">Analytics</span></h1>
+      <p class="lead" lang="de">Die Auswertungsseite zeigt dir Diagramme und Trends zu deinen Finanzen. So erkennst du auf einen Blick, wohin dein Geld fließt.</p>
+      <p class="lead" lang="en">The analytics page shows you charts and trends about your finances. At a glance, you can see where your money goes.</p>
+
+      <h2><span lang="de">Zeiträume</span><span lang="en">Time Periods</span></h2>
+      <p lang="de">Wähle oben den gewünschten Zeitraum für die Auswertung:</p>
+      <p lang="en">Select the desired time period for the analysis at the top:</p>
+      <div lang="de">
+        <table>
+          <thead>
+            <tr><th>Zeitraum</th><th>Beschreibung</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Monat</strong></td><td>Auswertung für einen einzelnen Monat.</td></tr>
+            <tr><td><strong>Quartal</strong></td><td>Drei Monate zusammengefasst.</td></tr>
+            <tr><td><strong>Jahr</strong></td><td>Gesamtes Jahr mit monatlicher Aufschlüsselung.</td></tr>
+            <tr><td><strong>Benutzerdefiniert</strong></td><td>Eigenen Start- und Endzeitraum wählen.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div lang="en">
+        <table>
+          <thead>
+            <tr><th>Period</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Month</strong></td><td>Analysis for a single month.</td></tr>
+            <tr><td><strong>Quarter</strong></td><td>Three months combined.</td></tr>
+            <tr><td><strong>Year</strong></td><td>Entire year with monthly breakdown.</td></tr>
+            <tr><td><strong>Custom</strong></td><td>Choose your own start and end period.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2><span lang="de">Ansichten</span><span lang="en">Views</span></h2>
+      <p lang="de">Du kannst zwischen zwei Ansichten wechseln:</p>
+      <p lang="en">You can switch between two views:</p>
+      <ul lang="de">
+        <li><strong>Ausgaben-Aufschlüsselung</strong> &ndash; Zeigt, wofür du Geld ausgegeben hast.</li>
+        <li><strong>Einnahmen-Aufschlüsselung</strong> &ndash; Zeigt, woher dein Geld kommt.</li>
+      </ul>
+      <ul lang="en">
+        <li><strong>Expense breakdown</strong> &ndash; Shows what you spent money on.</li>
+        <li><strong>Income breakdown</strong> &ndash; Shows where your money comes from.</li>
+      </ul>
+
+      <h2><span lang="de">Diagramme</span><span lang="en">Charts</span></h2>
+      <h3><span lang="de">Kreisdiagramm</span><span lang="en">Pie Chart</span></h3>
+      <p lang="de">Das Kreisdiagramm zeigt die Verteilung nach Kategorien. Die Farben entsprechen den Farben, die du deinen <a href="categories.html">Kategorien</a> zugewiesen hast. Fahre mit der Maus über einen Bereich, um den genauen Betrag und Prozentsatz zu sehen.</p>
+      <p lang="en">The pie chart shows the distribution by categories. The colors match the colors you assigned to your <a href="categories.html">categories</a>. Hover over a section to see the exact amount and percentage.</p>
+
+      <h3><span lang="de">Balkendiagramm</span><span lang="en">Bar Chart</span></h3>
+      <p lang="de">Das Balkendiagramm zeigt den monatlichen Trend deiner Ausgaben oder Einnahmen. So erkennst du, ob deine Kosten steigen oder sinken.</p>
+      <p lang="en">The bar chart shows the monthly trend of your expenses or income. This helps you see whether your costs are rising or falling.</p>
+
+      <h2><span lang="de">Kategorie-Liste</span><span lang="en">Category List</span></h2>
+      <p lang="de">Unter den Diagrammen findest du eine detaillierte Liste aller Kategorien mit:</p>
+      <p lang="en">Below the charts, you will find a detailed list of all categories with:</p>
+      <ul lang="de">
+        <li>Kategoriename und Farbe</li>
+        <li>Gesamtbetrag im gewählten Zeitraum</li>
+        <li>Prozentualer Anteil am Gesamtbetrag</li>
+      </ul>
+      <ul lang="en">
+        <li>Category name and color</li>
+        <li>Total amount in the selected period</li>
+        <li>Percentage share of the total amount</li>
+      </ul>
+
+      <h2><span lang="de">Vergleich mit Vorperiode</span><span lang="en">Comparison with Previous Period</span></h2>
+      <p lang="de">Die Auswertung zeigt automatisch einen Vergleich mit der vorherigen Periode (z.&thinsp;B. aktueller Monat vs. Vormonat). Du siehst die prozentuale Veränderung, um Trends zu erkennen.</p>
+      <p lang="en">The analysis automatically shows a comparison with the previous period (e.g. current month vs. previous month). You see the percentage change to identify trends.</p>
+
+      <h2><span lang="de">Nach Oberkategorie filtern</span><span lang="en">Filter by Parent Category</span></h2>
+      <p lang="de">Wenn du <a href="categories.html">hierarchische Kategorien</a> nutzt, kannst du nach einer Oberkategorie filtern. So siehst du z.&thinsp;B. alle Ausgaben im Bereich &bdquo;Wohnen&ldquo; zusammengefasst mit den einzelnen Unterkategorien.</p>
+      <p lang="en">If you use <a href="categories.html">hierarchical categories</a>, you can filter by a parent category. For example, you can see all expenses in the "Housing" area summarized with the individual subcategories.</p>
+
+      <div class="callout callout-tip" lang="de">
+        <div class="callout-title">Tipp</div>
+        <p>Nutze die Jahresansicht für eine monatliche Aufschlüsselungstabelle. So erkennst du saisonale Muster in deinen Ausgaben.</p>
+      </div>
+      <div class="callout callout-tip" lang="en">
+        <div class="callout-title">Tip</div>
+        <p>Use the year view for a monthly breakdown table. This helps you identify seasonal patterns in your expenses.</p>
+      </div>
+
+      <div class="page-nav">
+        <a href="categories.html">
+          <div class="page-nav-label"><span lang="de">&larr; Vorherige Seite</span><span lang="en">&larr; Previous Page</span></div>
+          <div class="page-nav-title"><span lang="de">Kategorien</span><span lang="en">Categories</span></div>
+        </a>
+        <a href="creditcards.html" class="page-nav-next">
+          <div class="page-nav-label"><span lang="de">Nächste Seite &rarr;</span><span lang="en">Next Page &rarr;</span></div>
+          <div class="page-nav-title"><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2025 Financer</span>
+    <div class="footer-links">
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Feature anfragen</span><span lang="en">Request Feature</span></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+    document.querySelectorAll('.sidebar-link').forEach(function(link) {
+      link.addEventListener('click', function() { if (window.innerWidth <= 768) toggleSidebar(); });
+    });
+    function toggleLang() {
+      var lang = document.documentElement.lang === 'de' ? 'en' : 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+      localStorage.setItem('lang', lang);
+    }
+    (function() {
+      var lang = localStorage.getItem('lang') || 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+    })();
+  </script>
+</body>
+</html>

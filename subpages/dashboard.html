@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-de="Dashboard – Financer Docs" data-en="Dashboard – Financer Docs">Dashboard – Financer Docs</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menü">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="../index.html" class="header-logo">
+        <img src="../assets/logo.png" alt="Financer">
+        <span>Docs</span>
+      </a>
+    </div>
+    <div class="header-links">
+      <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+      <a href="https://financer.getbugio.com" class="btn-bug" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Erste Schritte</span><span lang="en">Getting Started</span></div>
+      <a href="../index.html" class="sidebar-link"><span lang="de">Übersicht</span><span lang="en">Overview</span></a>
+      <a href="setup.html" class="sidebar-link"><span lang="de">Ersteinrichtung</span><span lang="en">Initial Setup</span></a>
+      <a href="login.html" class="sidebar-link"><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Bedienung</span><span lang="en">Usage</span></div>
+      <a href="dashboard.html" class="sidebar-link active">Dashboard</a>
+      <a href="transactions.html" class="sidebar-link"><span lang="de">Transaktionen</span><span lang="en">Transactions</span></a>
+      <a href="recurring.html" class="sidebar-link"><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></a>
+      <a href="accounts.html" class="sidebar-link"><span lang="de">Konten</span><span lang="en">Accounts</span></a>
+      <a href="categories.html" class="sidebar-link"><span lang="de">Kategorien</span><span lang="en">Categories</span></a>
+      <a href="analytics.html" class="sidebar-link"><span lang="de">Auswertungen</span><span lang="en">Analytics</span></a>
+      <a href="creditcards.html" class="sidebar-link"><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Sonstiges</span><span lang="en">Other</span></div>
+      <a href="settings.html" class="sidebar-link"><span lang="de">Einstellungen</span><span lang="en">Settings</span></a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">Docs</a><span>/</span>Dashboard
+      </div>
+
+      <h1>Dashboard</h1>
+      <p class="lead" lang="de">Das Dashboard ist die Startseite von Financer und gibt dir einen schnellen Überblick über deine finanzielle Situation im ausgewählten Monat.</p>
+      <p class="lead" lang="en">The dashboard is the home page of Financer and gives you a quick overview of your financial situation for the selected month.</p>
+
+      <h2><span lang="de">Übersichtskarten</span><span lang="en">Overview Cards</span></h2>
+      <p lang="de">Am oberen Rand siehst du vier Karten mit den wichtigsten Kennzahlen:</p>
+      <p lang="en">At the top you see four cards with the key figures:</p>
+      <div lang="de">
+        <table>
+          <thead>
+            <tr><th>Karte</th><th>Beschreibung</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Gesamtsaldo</strong></td><td>Die Summe aller Kontenstände.</td></tr>
+            <tr><td><strong>Monatliche Einnahmen</strong></td><td>Alle geplanten Einnahmen für den ausgewählten Monat.</td></tr>
+            <tr><td><strong>Monatliche Ausgaben</strong></td><td>Alle geplanten Ausgaben für den ausgewählten Monat.</td></tr>
+            <tr><td><strong>Verbleibendes Budget</strong></td><td>Einnahmen minus Ausgaben = was übrig bleibt.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div lang="en">
+        <table>
+          <thead>
+            <tr><th>Card</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Total Balance</strong></td><td>The sum of all account balances.</td></tr>
+            <tr><td><strong>Monthly Income</strong></td><td>All planned income for the selected month.</td></tr>
+            <tr><td><strong>Monthly Expenses</strong></td><td>All planned expenses for the selected month.</td></tr>
+            <tr><td><strong>Remaining Budget</strong></td><td>Income minus expenses = what remains.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p lang="de">Darunter werden die Salden deiner einzelnen Konten angezeigt.</p>
+      <p lang="en">Below that, the balances of your individual accounts are displayed.</p>
+
+      <div class="callout callout-tip" lang="de">
+        <div class="callout-title">Tipp</div>
+        <p>Du kannst einzelne Karten ein- und ausblenden. Die Einstellung wird lokal im Browser gespeichert.</p>
+      </div>
+      <div class="callout callout-tip" lang="en">
+        <div class="callout-title">Tip</div>
+        <p>You can show and hide individual cards. The setting is stored locally in the browser.</p>
+      </div>
+
+      <h2><span lang="de">Monat wechseln</span><span lang="en">Switch Month</span></h2>
+      <p lang="de">Über dem Dashboard befindet sich ein Monats-Selektor. Klicke auf die Pfeile links und rechts, um zwischen Monaten zu navigieren. Der angezeigte Monat beeinflusst die geplanten Transaktionen und die Zusammenfassung.</p>
+      <p lang="en">Above the dashboard there is a month selector. Click the arrows left and right to navigate between months. The displayed month affects the planned transactions and the summary.</p>
+
+      <h2><span lang="de">Geplante Transaktionen</span><span lang="en">Planned Transactions</span></h2>
+      <p lang="de">Im unteren Bereich des Dashboards werden deine geplanten Transaktionen (Daueraufträge) für den gewählten Monat angezeigt. Die Ansicht ist aufgeteilt in:</p>
+      <p lang="en">In the lower area of the dashboard, your planned transactions (recurring) for the selected month are displayed. The view is divided into:</p>
+      <ul lang="de">
+        <li><strong>Ausgaben</strong> (links) &ndash; Alle geplanten Ausgaben wie Miete, Abos etc.</li>
+        <li><strong>Einnahmen</strong> (rechts) &ndash; Alle geplanten Einnahmen wie Gehalt etc.</li>
+      </ul>
+      <ul lang="en">
+        <li><strong>Expenses</strong> (left) &ndash; All planned expenses like rent, subscriptions, etc.</li>
+        <li><strong>Income</strong> (right) &ndash; All planned income like salary, etc.</li>
+      </ul>
+
+      <h3><span lang="de">Transaktion als erledigt markieren</span><span lang="en">Mark Transaction as Done</span></h3>
+      <p lang="de">Klicke auf den Kreis neben einer geplanten Transaktion, um sie als erledigt zu markieren. Erledigte Transaktionen werden durchgestrichen dargestellt.</p>
+      <p lang="en">Click the circle next to a planned transaction to mark it as done. Completed transactions are shown with a strikethrough.</p>
+
+      <h3><span lang="de">Erledigte ausblenden</span><span lang="en">Hide Completed</span></h3>
+      <p lang="de">Mit dem Toggle <strong>&bdquo;Erledigte ausblenden&ldquo;</strong> kannst du bereits abgehakte Einträge verstecken, um die Übersicht sauber zu halten.</p>
+      <p lang="en">With the <strong>"Hide completed"</strong> toggle, you can hide already checked-off entries to keep the overview clean.</p>
+
+      <h3><span lang="de">Betrag für eine Einzelbuchung ändern</span><span lang="en">Change Amount for a Single Entry</span></h3>
+      <p lang="de">Falls ein Dauerauftrag in einem bestimmten Monat von der Regel abweicht, kannst du den Betrag für diese einzelne Buchung anpassen:</p>
+      <p lang="en">If a recurring transaction deviates from the rule in a specific month, you can adjust the amount for that single entry:</p>
+      <ol lang="de">
+        <li>Klicke auf die geplante Transaktion.</li>
+        <li>Wähle <strong>&bdquo;Betrag ändern&ldquo;</strong>.</li>
+        <li>Gib den abweichenden Betrag ein.</li>
+        <li>Optional: Wähle <strong>&bdquo;Für alle zukünftigen anwenden&ldquo;</strong>, um den Betrag dauerhaft zu ändern.</li>
+      </ol>
+      <ol lang="en">
+        <li>Click on the planned transaction.</li>
+        <li>Select <strong>"Change amount"</strong>.</li>
+        <li>Enter the different amount.</li>
+        <li>Optional: Select <strong>"Apply to all future"</strong> to permanently change the amount.</li>
+      </ol>
+
+      <h2><span lang="de">Schnelles Hinzufügen</span><span lang="en">Quick Add</span></h2>
+      <p lang="de">Über den <strong>+&thinsp;Button</strong> unten rechts kannst du schnell eine neue Transaktion erstellen, ohne die Seite zu wechseln. Es öffnet sich ein Formular, in dem du Betrag, Konto, Kategorie und Typ angeben kannst.</p>
+      <p lang="en">Via the <strong>+ button</strong> at the bottom right, you can quickly create a new transaction without leaving the page. A form opens where you can enter amount, account, category, and type.</p>
+
+      <h2><span lang="de">Letzte Transaktionen</span><span lang="en">Recent Transactions</span></h2>
+      <p lang="de">Unterhalb der geplanten Transaktionen werden deine letzten Buchungen angezeigt. Du kannst die Anzahl der angezeigten Einträge wählen (5, 10, 20 oder 50).</p>
+      <p lang="en">Below the planned transactions, your recent entries are displayed. You can choose the number of displayed entries (5, 10, 20, or 50).</p>
+
+      <div class="page-nav">
+        <a href="login.html">
+          <div class="page-nav-label"><span lang="de">&larr; Vorherige Seite</span><span lang="en">&larr; Previous Page</span></div>
+          <div class="page-nav-title"><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span></div>
+        </a>
+        <a href="transactions.html" class="page-nav-next">
+          <div class="page-nav-label"><span lang="de">Nächste Seite &rarr;</span><span lang="en">Next Page &rarr;</span></div>
+          <div class="page-nav-title"><span lang="de">Transaktionen</span><span lang="en">Transactions</span></div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2025 Financer</span>
+    <div class="footer-links">
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Feature anfragen</span><span lang="en">Request Feature</span></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+    document.querySelectorAll('.sidebar-link').forEach(function(link) {
+      link.addEventListener('click', function() { if (window.innerWidth <= 768) toggleSidebar(); });
+    });
+    function toggleLang() {
+      var lang = document.documentElement.lang === 'de' ? 'en' : 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+      localStorage.setItem('lang', lang);
+    }
+    (function() {
+      var lang = localStorage.getItem('lang') || 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+    })();
+  </script>
+</body>
+</html>

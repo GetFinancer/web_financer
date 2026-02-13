@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-de="Kreditkarten – Financer Docs" data-en="Credit Cards – Financer Docs">Kreditkarten – Financer Docs</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menü">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="../index.html" class="header-logo">
+        <img src="../assets/logo.png" alt="Financer">
+        <span>Docs</span>
+      </a>
+    </div>
+    <div class="header-links">
+      <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+      <a href="https://financer.getbugio.com" class="btn-bug" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Erste Schritte</span><span lang="en">Getting Started</span></div>
+      <a href="../index.html" class="sidebar-link"><span lang="de">Übersicht</span><span lang="en">Overview</span></a>
+      <a href="setup.html" class="sidebar-link"><span lang="de">Ersteinrichtung</span><span lang="en">Initial Setup</span></a>
+      <a href="login.html" class="sidebar-link"><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Bedienung</span><span lang="en">Usage</span></div>
+      <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+      <a href="transactions.html" class="sidebar-link"><span lang="de">Transaktionen</span><span lang="en">Transactions</span></a>
+      <a href="recurring.html" class="sidebar-link"><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></a>
+      <a href="accounts.html" class="sidebar-link"><span lang="de">Konten</span><span lang="en">Accounts</span></a>
+      <a href="categories.html" class="sidebar-link"><span lang="de">Kategorien</span><span lang="en">Categories</span></a>
+      <a href="analytics.html" class="sidebar-link"><span lang="de">Auswertungen</span><span lang="en">Analytics</span></a>
+      <a href="creditcards.html" class="sidebar-link active"><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Sonstiges</span><span lang="en">Other</span></div>
+      <a href="settings.html" class="sidebar-link"><span lang="de">Einstellungen</span><span lang="en">Settings</span></a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">Docs</a><span>/</span><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span>
+      </div>
+
+      <h1><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></h1>
+      <p class="lead" lang="de">Financer unterstützt die Verwaltung von Kreditkarten mit Abrechnungszyklen. So behältst du den Überblick über anstehende Kreditkartenzahlungen.</p>
+      <p class="lead" lang="en">Financer supports managing credit cards with billing cycles. This way you keep track of upcoming credit card payments.</p>
+
+      <h2><span lang="de">Kreditkarte einrichten</span><span lang="en">Set Up a Credit Card</span></h2>
+      <p lang="de">Um eine Kreditkarte in Financer zu nutzen, erstellst du ein Konto vom Typ <strong>&bdquo;Kreditkarte&ldquo;</strong>:</p>
+      <p lang="en">To use a credit card in Financer, create an account of type <strong>"Credit Card"</strong>:</p>
+      <ol class="steps" lang="de">
+        <li>Gehe zu <a href="accounts.html">Konten</a> und erstelle ein neues Konto.</li>
+        <li>Wähle als Typ <strong>&bdquo;Kreditkarte&ldquo;</strong>.</li>
+        <li>Gib den <strong>Abrechnungstag</strong> ein &ndash; der Tag im Monat, an dem dein Abrechnungszeitraum endet.</li>
+        <li>Gib den <strong>Zahlungstag</strong> ein &ndash; der Tag, an dem die Kreditkartenrechnung von deinem Bankkonto abgebucht wird.</li>
+        <li>Wähle das <strong>verknüpfte Bankkonto</strong> &ndash; das Konto, von dem die Kreditkartenrechnung bezahlt wird.</li>
+      </ol>
+      <ol class="steps" lang="en">
+        <li>Go to <a href="accounts.html">Accounts</a> and create a new account.</li>
+        <li>Select <strong>"Credit Card"</strong> as the type.</li>
+        <li>Enter the <strong>statement day</strong> &ndash; the day of the month when your billing period ends.</li>
+        <li>Enter the <strong>payment day</strong> &ndash; the day when the credit card bill is charged to your bank account.</li>
+        <li>Select the <strong>linked bank account</strong> &ndash; the account from which the credit card bill is paid.</li>
+      </ol>
+
+      <h2><span lang="de">So funktioniert die Abrechnung</span><span lang="en">How Billing Works</span></h2>
+      <p lang="de">Financer berechnet automatisch die Kreditkartenabrechnung basierend auf:</p>
+      <p lang="en">Financer automatically calculates the credit card statement based on:</p>
+      <ul lang="de">
+        <li>Allen Transaktionen auf dem Kreditkartenkonto innerhalb des Abrechnungszeitraums.</li>
+        <li>Dem konfigurierten Abrechnungstag und Zahlungstag.</li>
+      </ul>
+      <ul lang="en">
+        <li>All transactions on the credit card account within the billing period.</li>
+        <li>The configured statement day and payment day.</li>
+      </ul>
+      <p lang="de">Die berechnete Abrechnung erscheint als <strong>geplante Transaktion</strong> im Dashboard am Zahlungstag. So siehst du, wann welcher Betrag von deinem Bankkonto abgebucht wird.</p>
+      <p lang="en">The calculated statement appears as a <strong>planned transaction</strong> on the dashboard on the payment day. This way you see when and how much will be charged to your bank account.</p>
+
+      <h3><span lang="de">Beispiel</span><span lang="en">Example</span></h3>
+      <div class="callout callout-tip" lang="de">
+        <div class="callout-title">Beispiel</div>
+        <p>Deine Kreditkarte hat Abrechnungstag 25 und Zahlungstag 5. Alle Ausgaben vom 26. des Vormonats bis zum 25. des aktuellen Monats werden zusammengefasst und am 5. des Folgemonats von deinem Bankkonto abgebucht.</p>
+      </div>
+      <div class="callout callout-tip" lang="en">
+        <div class="callout-title">Example</div>
+        <p>Your credit card has statement day 25 and payment day 5. All expenses from the 26th of the previous month to the 25th of the current month are combined and charged to your bank account on the 5th of the following month.</p>
+      </div>
+
+      <h2><span lang="de">Dashboard-Anzeige</span><span lang="en">Dashboard Display</span></h2>
+      <p lang="de">Im Dashboard werden Kreditkartenabrechnungen als separate geplante Transaktionen angezeigt. Du siehst:</p>
+      <p lang="en">On the dashboard, credit card statements are shown as separate planned transactions. You see:</p>
+      <ul lang="de">
+        <li>Den Namen der Kreditkarte</li>
+        <li>Den berechneten Abrechnungsbetrag</li>
+        <li>Das Zahlungsdatum</li>
+        <li>Das verknüpfte Bankkonto</li>
+      </ul>
+      <ul lang="en">
+        <li>The credit card name</li>
+        <li>The calculated statement amount</li>
+        <li>The payment date</li>
+        <li>The linked bank account</li>
+      </ul>
+
+      <div class="callout callout-warn" lang="de">
+        <div class="callout-title">Hinweis</div>
+        <p>Die angezeigte Abrechnung basiert auf den in Financer erfassten Transaktionen. Stelle sicher, dass alle Kreditkartenausgaben eingetragen sind, damit der Betrag korrekt ist.</p>
+      </div>
+      <div class="callout callout-warn" lang="en">
+        <div class="callout-title">Note</div>
+        <p>The displayed statement is based on the transactions recorded in Financer. Make sure all credit card expenses are entered so the amount is correct.</p>
+      </div>
+
+      <div class="page-nav">
+        <a href="analytics.html">
+          <div class="page-nav-label"><span lang="de">&larr; Vorherige Seite</span><span lang="en">&larr; Previous Page</span></div>
+          <div class="page-nav-title"><span lang="de">Auswertungen</span><span lang="en">Analytics</span></div>
+        </a>
+        <a href="settings.html" class="page-nav-next">
+          <div class="page-nav-label"><span lang="de">Nächste Seite &rarr;</span><span lang="en">Next Page &rarr;</span></div>
+          <div class="page-nav-title"><span lang="de">Einstellungen</span><span lang="en">Settings</span></div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2025 Financer</span>
+    <div class="footer-links">
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Feature anfragen</span><span lang="en">Request Feature</span></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+    document.querySelectorAll('.sidebar-link').forEach(function(link) {
+      link.addEventListener('click', function() { if (window.innerWidth <= 768) toggleSidebar(); });
+    });
+    function toggleLang() {
+      var lang = document.documentElement.lang === 'de' ? 'en' : 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+      localStorage.setItem('lang', lang);
+    }
+    (function() {
+      var lang = localStorage.getItem('lang') || 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+    })();
+  </script>
+</body>
+</html>
