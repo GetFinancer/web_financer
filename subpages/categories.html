@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-de="Kategorien – Financer Docs" data-en="Categories – Financer Docs">Kategorien – Financer Docs</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menü">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="../index.html" class="header-logo">
+        <img src="../assets/logo.png" alt="Financer">
+        <span>Docs</span>
+      </a>
+    </div>
+    <div class="header-links">
+      <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+      <a href="https://financer.getbugio.com" class="btn-bug" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Erste Schritte</span><span lang="en">Getting Started</span></div>
+      <a href="../index.html" class="sidebar-link"><span lang="de">Übersicht</span><span lang="en">Overview</span></a>
+      <a href="setup.html" class="sidebar-link"><span lang="de">Ersteinrichtung</span><span lang="en">Initial Setup</span></a>
+      <a href="login.html" class="sidebar-link"><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Bedienung</span><span lang="en">Usage</span></div>
+      <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+      <a href="transactions.html" class="sidebar-link"><span lang="de">Transaktionen</span><span lang="en">Transactions</span></a>
+      <a href="recurring.html" class="sidebar-link"><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></a>
+      <a href="accounts.html" class="sidebar-link"><span lang="de">Konten</span><span lang="en">Accounts</span></a>
+      <a href="categories.html" class="sidebar-link active"><span lang="de">Kategorien</span><span lang="en">Categories</span></a>
+      <a href="analytics.html" class="sidebar-link"><span lang="de">Auswertungen</span><span lang="en">Analytics</span></a>
+      <a href="creditcards.html" class="sidebar-link"><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Sonstiges</span><span lang="en">Other</span></div>
+      <a href="settings.html" class="sidebar-link"><span lang="de">Einstellungen</span><span lang="en">Settings</span></a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">Docs</a><span>/</span><span lang="de">Kategorien</span><span lang="en">Categories</span>
+      </div>
+
+      <h1><span lang="de">Kategorien</span><span lang="en">Categories</span></h1>
+      <p class="lead" lang="de">Kategorien helfen dir, deine Transaktionen zu ordnen. Du kannst eigene Kategorien für Einnahmen und Ausgaben erstellen und sie hierarchisch strukturieren.</p>
+      <p class="lead" lang="en">Categories help you organize your transactions. You can create custom categories for income and expenses and structure them hierarchically.</p>
+
+      <h2><span lang="de">Kategorietypen</span><span lang="en">Category Types</span></h2>
+      <p lang="de">Es gibt zwei Typen von Kategorien:</p>
+      <p lang="en">There are two types of categories:</p>
+      <ul lang="de">
+        <li><strong>Ausgabe-Kategorien</strong> &ndash; z.&thinsp;B. Miete, Lebensmittel, Transport, Freizeit</li>
+        <li><strong>Einnahme-Kategorien</strong> &ndash; z.&thinsp;B. Gehalt, Freelancing, Erstattungen</li>
+      </ul>
+      <ul lang="en">
+        <li><strong>Expense categories</strong> &ndash; e.g. rent, groceries, transport, leisure</li>
+        <li><strong>Income categories</strong> &ndash; e.g. salary, freelancing, refunds</li>
+      </ul>
+      <p lang="de">Beim Erstellen einer Transaktion werden dir nur die passenden Kategorien angezeigt (Einnahme-Kategorien bei Einnahmen, Ausgabe-Kategorien bei Ausgaben).</p>
+      <p lang="en">When creating a transaction, only the matching categories are shown (income categories for income, expense categories for expenses).</p>
+
+      <h2><span lang="de">Neue Kategorie erstellen</span><span lang="en">Create New Category</span></h2>
+      <ol class="steps" lang="de">
+        <li>Navigiere zur Seite <strong>&bdquo;Kategorien&ldquo;</strong>.</li>
+        <li>Klicke auf <strong>&bdquo;Neue Kategorie&ldquo;</strong>.</li>
+        <li>Gib einen <strong>Namen</strong> ein.</li>
+        <li>Wähle den <strong>Typ</strong> (Einnahme oder Ausgabe).</li>
+        <li>Wähle eine <strong>Farbe</strong> &ndash; diese wird in den Auswertungen und Diagrammen verwendet.</li>
+        <li>Optional: Wähle eine <strong>Oberkategorie</strong> für hierarchische Strukturierung.</li>
+        <li>Klicke auf <strong>&bdquo;Speichern&ldquo;</strong>.</li>
+      </ol>
+      <ol class="steps" lang="en">
+        <li>Navigate to the <strong>"Categories"</strong> page.</li>
+        <li>Click <strong>"New category"</strong>.</li>
+        <li>Enter a <strong>name</strong>.</li>
+        <li>Select the <strong>type</strong> (income or expense).</li>
+        <li>Select a <strong>color</strong> &ndash; this is used in analytics and charts.</li>
+        <li>Optional: Select a <strong>parent category</strong> for hierarchical structure.</li>
+        <li>Click <strong>"Save"</strong>.</li>
+      </ol>
+
+      <h2><span lang="de">Hierarchische Kategorien</span><span lang="en">Hierarchical Categories</span></h2>
+      <p lang="de">Du kannst Unterkategorien erstellen, indem du einer Kategorie eine Oberkategorie zuweist. Beispiel:</p>
+      <p lang="en">You can create subcategories by assigning a parent category. Example:</p>
+      <div lang="de">
+        <ul>
+          <li><strong>Wohnen</strong> (Oberkategorie)
+            <ul>
+              <li>Miete</li>
+              <li>Strom</li>
+              <li>Internet</li>
+            </ul>
+          </li>
+          <li><strong>Transport</strong> (Oberkategorie)
+            <ul>
+              <li>ÖPNV</li>
+              <li>Tanken</li>
+              <li>KFZ-Versicherung</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div lang="en">
+        <ul>
+          <li><strong>Housing</strong> (parent category)
+            <ul>
+              <li>Rent</li>
+              <li>Electricity</li>
+              <li>Internet</li>
+            </ul>
+          </li>
+          <li><strong>Transport</strong> (parent category)
+            <ul>
+              <li>Public transit</li>
+              <li>Fuel</li>
+              <li>Car insurance</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <p lang="de">In den <a href="analytics.html">Auswertungen</a> kannst du nach Oberkategorien filtern, um eine zusammengefasste Ansicht zu erhalten.</p>
+      <p lang="en">In the <a href="analytics.html">Analytics</a>, you can filter by parent categories to get a summarized view.</p>
+
+      <h2><span lang="de">Farben</span><span lang="en">Colors</span></h2>
+      <p lang="de">Jede Kategorie hat eine eigene Farbe. Diese wird in Diagrammen und Übersichten verwendet, um Kategorien visuell voneinander zu unterscheiden. Wähle möglichst unterschiedliche Farben für bessere Lesbarkeit.</p>
+      <p lang="en">Each category has its own color. This is used in charts and overviews to visually distinguish categories from each other. Choose different colors for better readability.</p>
+
+      <h2><span lang="de">Kategorie bearbeiten oder löschen</span><span lang="en">Edit or Delete Category</span></h2>
+      <p lang="de">Klicke auf eine bestehende Kategorie, um sie zu bearbeiten. Du kannst Name, Farbe und Oberkategorie ändern.</p>
+      <p lang="en">Click on an existing category to edit it. You can change the name, color, and parent category.</p>
+
+      <div class="callout callout-warn" lang="de">
+        <div class="callout-title">Hinweis</div>
+        <p>Kategorien, die bereits von Transaktionen oder Daueraufträgen verwendet werden, sollten nur mit Bedacht gelöscht werden. Die zugehörigen Buchungen verlieren ihre Kategoriezuordnung.</p>
+      </div>
+      <div class="callout callout-warn" lang="en">
+        <div class="callout-title">Note</div>
+        <p>Categories that are already used by transactions or recurring entries should only be deleted with care. The associated entries will lose their category assignment.</p>
+      </div>
+
+      <div class="page-nav">
+        <a href="accounts.html">
+          <div class="page-nav-label"><span lang="de">&larr; Vorherige Seite</span><span lang="en">&larr; Previous Page</span></div>
+          <div class="page-nav-title"><span lang="de">Konten</span><span lang="en">Accounts</span></div>
+        </a>
+        <a href="analytics.html" class="page-nav-next">
+          <div class="page-nav-label"><span lang="de">Nächste Seite &rarr;</span><span lang="en">Next Page &rarr;</span></div>
+          <div class="page-nav-title"><span lang="de">Auswertungen</span><span lang="en">Analytics</span></div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2025 Financer</span>
+    <div class="footer-links">
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Feature anfragen</span><span lang="en">Request Feature</span></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+    document.querySelectorAll('.sidebar-link').forEach(function(link) {
+      link.addEventListener('click', function() { if (window.innerWidth <= 768) toggleSidebar(); });
+    });
+    function toggleLang() {
+      var lang = document.documentElement.lang === 'de' ? 'en' : 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+      localStorage.setItem('lang', lang);
+    }
+    (function() {
+      var lang = localStorage.getItem('lang') || 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+    })();
+  </script>
+</body>
+</html>

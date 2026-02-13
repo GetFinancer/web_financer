@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-de="Anmeldung &amp; 2FA – Financer Docs" data-en="Login &amp; 2FA – Financer Docs">Anmeldung &amp; 2FA – Financer Docs</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menü">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="../index.html" class="header-logo">
+        <img src="../assets/logo.png" alt="Financer">
+        <span>Docs</span>
+      </a>
+    </div>
+    <div class="header-links">
+      <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+      <a href="https://financer.getbugio.com" class="btn-bug" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Erste Schritte</span><span lang="en">Getting Started</span></div>
+      <a href="../index.html" class="sidebar-link"><span lang="de">Übersicht</span><span lang="en">Overview</span></a>
+      <a href="setup.html" class="sidebar-link"><span lang="de">Ersteinrichtung</span><span lang="en">Initial Setup</span></a>
+      <a href="login.html" class="sidebar-link active"><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Bedienung</span><span lang="en">Usage</span></div>
+      <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+      <a href="transactions.html" class="sidebar-link"><span lang="de">Transaktionen</span><span lang="en">Transactions</span></a>
+      <a href="recurring.html" class="sidebar-link"><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></a>
+      <a href="accounts.html" class="sidebar-link"><span lang="de">Konten</span><span lang="en">Accounts</span></a>
+      <a href="categories.html" class="sidebar-link"><span lang="de">Kategorien</span><span lang="en">Categories</span></a>
+      <a href="analytics.html" class="sidebar-link"><span lang="de">Auswertungen</span><span lang="en">Analytics</span></a>
+      <a href="creditcards.html" class="sidebar-link"><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Sonstiges</span><span lang="en">Other</span></div>
+      <a href="settings.html" class="sidebar-link"><span lang="de">Einstellungen</span><span lang="en">Settings</span></a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">Docs</a><span>/</span><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span>
+      </div>
+
+      <h1><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span></h1>
+      <p class="lead" lang="de">Nach der Ersteinrichtung meldest du dich mit deinem Passwort an. Optional kannst du dein Konto mit Zwei-Faktor-Authentifizierung zusätzlich absichern.</p>
+      <p class="lead" lang="en">After the initial setup, you log in with your password. Optionally, you can additionally secure your account with two-factor authentication.</p>
+
+      <h2>Login</h2>
+      <p lang="de">Wenn deine Sitzung abgelaufen ist oder du dich abgemeldet hast, wirst du zur Login-Seite weitergeleitet.</p>
+      <p lang="en">When your session has expired or you have logged out, you will be redirected to the login page.</p>
+      <ol class="steps" lang="de">
+        <li><strong>Gib dein Passwort ein</strong>, das du bei der Ersteinrichtung festgelegt hast.</li>
+        <li><strong>Klicke auf &bdquo;Anmelden&ldquo;</strong>. Du wirst zum Dashboard weitergeleitet.</li>
+      </ol>
+      <ol class="steps" lang="en">
+        <li><strong>Enter your password</strong> that you set during the initial setup.</li>
+        <li><strong>Click "Login"</strong>. You will be redirected to the dashboard.</li>
+      </ol>
+
+      <div class="callout callout-tip" lang="de">
+        <div class="callout-title">Tipp</div>
+        <p>Deine Sitzung bleibt 7 Tage aktiv. Danach musst du dich erneut anmelden.</p>
+      </div>
+      <div class="callout callout-tip" lang="en">
+        <div class="callout-title">Tip</div>
+        <p>Your session remains active for 7 days. After that, you need to log in again.</p>
+      </div>
+
+      <h2><span lang="de">Zwei-Faktor-Authentifizierung (2FA)</span><span lang="en">Two-Factor Authentication (2FA)</span></h2>
+      <p lang="de">2FA fügt eine zusätzliche Sicherheitsebene hinzu. Nach der Passworteingabe musst du einen 6-stelligen Code aus deiner Authenticator-App eingeben.</p>
+      <p lang="en">2FA adds an additional security layer. After entering your password, you must enter a 6-digit code from your authenticator app.</p>
+
+      <h3><span lang="de">2FA aktivieren</span><span lang="en">Enable 2FA</span></h3>
+      <ol class="steps" lang="de">
+        <li>Gehe zu <a href="settings.html">Einstellungen</a> und scrolle zum Abschnitt <strong>&bdquo;Zwei-Faktor-Authentifizierung&ldquo;</strong>.</li>
+        <li>Klicke auf <strong>&bdquo;2FA aktivieren&ldquo;</strong>.</li>
+        <li><strong>Scanne den QR-Code</strong> mit einer Authenticator-App (z.&thinsp;B. Google Authenticator, Authy, 1Password).</li>
+        <li><strong>Sichere deine Backup-Codes</strong>. Diese werden angezeigt und ermöglichen den Zugang, falls du dein Authenticator-Gerät verlierst. Jeder Code kann nur einmal verwendet werden.</li>
+        <li>Gib den <strong>6-stelligen Code</strong> aus deiner Authenticator-App ein und klicke auf <strong>&bdquo;Aktivieren&ldquo;</strong>.</li>
+      </ol>
+      <ol class="steps" lang="en">
+        <li>Go to <a href="settings.html">Settings</a> and scroll to the <strong>"Two-Factor Authentication"</strong> section.</li>
+        <li>Click <strong>"Enable 2FA"</strong>.</li>
+        <li><strong>Scan the QR code</strong> with an authenticator app (e.g. Google Authenticator, Authy, 1Password).</li>
+        <li><strong>Save your backup codes</strong>. These are displayed and allow access if you lose your authenticator device. Each code can only be used once.</li>
+        <li>Enter the <strong>6-digit code</strong> from your authenticator app and click <strong>"Enable"</strong>.</li>
+      </ol>
+
+      <div class="callout callout-warn" lang="de">
+        <div class="callout-title">Wichtig</div>
+        <p>Speichere deine Backup-Codes an einem sicheren Ort ab. Ohne Authenticator-App und ohne Backup-Codes kannst du dich nicht mehr anmelden.</p>
+      </div>
+      <div class="callout callout-warn" lang="en">
+        <div class="callout-title">Important</div>
+        <p>Store your backup codes in a safe place. Without your authenticator app and without backup codes, you will not be able to log in.</p>
+      </div>
+
+      <h3><span lang="de">Anmeldung mit 2FA</span><span lang="en">Login with 2FA</span></h3>
+      <p lang="de">Wenn 2FA aktiviert ist, ändert sich der Login-Ablauf:</p>
+      <p lang="en">When 2FA is enabled, the login process changes:</p>
+      <ol class="steps" lang="de">
+        <li><strong>Passwort eingeben</strong> wie gewohnt.</li>
+        <li>Ein zweites Feld erscheint: <strong>Gib den 6-stelligen Code</strong> aus deiner Authenticator-App ein.</li>
+        <li>Alternativ kannst du einen <strong>Backup-Code</strong> eingeben (max. 8 Zeichen).</li>
+      </ol>
+      <ol class="steps" lang="en">
+        <li><strong>Enter your password</strong> as usual.</li>
+        <li>A second field appears: <strong>Enter the 6-digit code</strong> from your authenticator app.</li>
+        <li>Alternatively, you can enter a <strong>backup code</strong> (max. 8 characters).</li>
+      </ol>
+
+      <h3><span lang="de">Backup-Codes neu generieren</span><span lang="en">Regenerate Backup Codes</span></h3>
+      <p lang="de">In den <a href="settings.html">Einstellungen</a> kannst du jederzeit neue Backup-Codes erstellen. Dabei werden alle bisherigen Codes ungültig. Du musst dein Passwort eingeben, um neue Codes zu generieren.</p>
+      <p lang="en">In the <a href="settings.html">Settings</a>, you can generate new backup codes at any time. All previous codes will become invalid. You must enter your password to generate new codes.</p>
+
+      <h3><span lang="de">2FA deaktivieren</span><span lang="en">Disable 2FA</span></h3>
+      <p lang="de">Falls du 2FA wieder abschalten möchtest:</p>
+      <p lang="en">If you want to disable 2FA:</p>
+      <ol lang="de">
+        <li>Gehe zu <strong>Einstellungen &rarr; Zwei-Faktor-Authentifizierung</strong>.</li>
+        <li>Klicke auf <strong>&bdquo;2FA deaktivieren&ldquo;</strong>.</li>
+        <li>Gib dein <strong>Passwort</strong> und einen aktuellen <strong>2FA-Code</strong> ein.</li>
+        <li>Bestätige mit <strong>&bdquo;2FA deaktivieren&ldquo;</strong>.</li>
+      </ol>
+      <ol lang="en">
+        <li>Go to <strong>Settings &rarr; Two-Factor Authentication</strong>.</li>
+        <li>Click <strong>"Disable 2FA"</strong>.</li>
+        <li>Enter your <strong>password</strong> and a current <strong>2FA code</strong>.</li>
+        <li>Confirm with <strong>"Disable 2FA"</strong>.</li>
+      </ol>
+
+      <div class="page-nav">
+        <a href="setup.html">
+          <div class="page-nav-label"><span lang="de">&larr; Vorherige Seite</span><span lang="en">&larr; Previous Page</span></div>
+          <div class="page-nav-title"><span lang="de">Ersteinrichtung</span><span lang="en">Initial Setup</span></div>
+        </a>
+        <a href="dashboard.html" class="page-nav-next">
+          <div class="page-nav-label"><span lang="de">Nächste Seite &rarr;</span><span lang="en">Next Page &rarr;</span></div>
+          <div class="page-nav-title">Dashboard</div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2025 Financer</span>
+    <div class="footer-links">
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Feature anfragen</span><span lang="en">Request Feature</span></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+    document.querySelectorAll('.sidebar-link').forEach(function(link) {
+      link.addEventListener('click', function() { if (window.innerWidth <= 768) toggleSidebar(); });
+    });
+    function toggleLang() {
+      var lang = document.documentElement.lang === 'de' ? 'en' : 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+      localStorage.setItem('lang', lang);
+    }
+    (function() {
+      var lang = localStorage.getItem('lang') || 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-de="Daueraufträge – Financer Docs" data-en="Recurring – Financer Docs">Daueraufträge – Financer Docs</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menü">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="../index.html" class="header-logo">
+        <img src="../assets/logo.png" alt="Financer">
+        <span>Docs</span>
+      </a>
+    </div>
+    <div class="header-links">
+      <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+      <a href="https://financer.getbugio.com" class="btn-bug" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Erste Schritte</span><span lang="en">Getting Started</span></div>
+      <a href="../index.html" class="sidebar-link"><span lang="de">Übersicht</span><span lang="en">Overview</span></a>
+      <a href="setup.html" class="sidebar-link"><span lang="de">Ersteinrichtung</span><span lang="en">Initial Setup</span></a>
+      <a href="login.html" class="sidebar-link"><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Bedienung</span><span lang="en">Usage</span></div>
+      <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+      <a href="transactions.html" class="sidebar-link"><span lang="de">Transaktionen</span><span lang="en">Transactions</span></a>
+      <a href="recurring.html" class="sidebar-link active"><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></a>
+      <a href="accounts.html" class="sidebar-link"><span lang="de">Konten</span><span lang="en">Accounts</span></a>
+      <a href="categories.html" class="sidebar-link"><span lang="de">Kategorien</span><span lang="en">Categories</span></a>
+      <a href="analytics.html" class="sidebar-link"><span lang="de">Auswertungen</span><span lang="en">Analytics</span></a>
+      <a href="creditcards.html" class="sidebar-link"><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Sonstiges</span><span lang="en">Other</span></div>
+      <a href="settings.html" class="sidebar-link"><span lang="de">Einstellungen</span><span lang="en">Settings</span></a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">Docs</a><span>/</span><span lang="de">Daueraufträge</span><span lang="en">Recurring</span>
+      </div>
+
+      <h1><span lang="de">Daueraufträge</span><span lang="en">Recurring Transactions</span></h1>
+      <p class="lead" lang="de">Daueraufträge sind wiederkehrende Buchungen, die automatisch als geplante Transaktionen im Dashboard erscheinen. Ideal für Miete, Gehalt, Abos und andere regelmäßige Zahlungen.</p>
+      <p class="lead" lang="en">Recurring transactions are repeating entries that automatically appear as planned transactions on the dashboard. Ideal for rent, salary, subscriptions, and other regular payments.</p>
+
+      <h2><span lang="de">Neuen Dauerauftrag erstellen</span><span lang="en">Create New Recurring Transaction</span></h2>
+      <ol class="steps" lang="de">
+        <li>Navigiere zur Seite <strong>&bdquo;Daueraufträge&ldquo;</strong> über das Menü.</li>
+        <li>Klicke auf <strong>&bdquo;Neuer Dauerauftrag&ldquo;</strong>.</li>
+        <li>Gib einen <strong>Namen</strong> ein (z.&thinsp;B. &bdquo;Miete&ldquo;, &bdquo;Netflix&ldquo;).</li>
+        <li>Wähle den <strong>Typ</strong> (Einnahme oder Ausgabe).</li>
+        <li>Gib den <strong>Betrag</strong> ein.</li>
+        <li>Wähle die <strong>Frequenz</strong> und das Startdatum.</li>
+        <li>Wähle <strong>Konto</strong> und <strong>Kategorie</strong>.</li>
+        <li>Optional: Setze ein <strong>Enddatum</strong>, falls der Dauerauftrag zeitlich begrenzt ist.</li>
+        <li>Klicke auf <strong>&bdquo;Speichern&ldquo;</strong>.</li>
+      </ol>
+      <ol class="steps" lang="en">
+        <li>Navigate to the <strong>"Recurring"</strong> page via the menu.</li>
+        <li>Click <strong>"New recurring transaction"</strong>.</li>
+        <li>Enter a <strong>name</strong> (e.g. "Rent", "Netflix").</li>
+        <li>Select the <strong>type</strong> (income or expense).</li>
+        <li>Enter the <strong>amount</strong>.</li>
+        <li>Select the <strong>frequency</strong> and start date.</li>
+        <li>Select <strong>account</strong> and <strong>category</strong>.</li>
+        <li>Optional: Set an <strong>end date</strong> if the recurring transaction is time-limited.</li>
+        <li>Click <strong>"Save"</strong>.</li>
+      </ol>
+
+      <h2><span lang="de">Verfügbare Frequenzen</span><span lang="en">Available Frequencies</span></h2>
+      <div lang="de">
+        <table>
+          <thead>
+            <tr><th>Frequenz</th><th>Beschreibung</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Täglich</td><td>Jeden Tag</td></tr>
+            <tr><td>Wöchentlich</td><td>Einmal pro Woche an einem bestimmten Wochentag</td></tr>
+            <tr><td>Monatlich</td><td>Einmal pro Monat an einem bestimmten Tag</td></tr>
+            <tr><td>Zweimonatlich</td><td>Alle zwei Monate</td></tr>
+            <tr><td>Vierteljährlich</td><td>Alle drei Monate</td></tr>
+            <tr><td>Halbjährlich</td><td>Alle sechs Monate</td></tr>
+            <tr><td>Jährlich</td><td>Einmal pro Jahr</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div lang="en">
+        <table>
+          <thead>
+            <tr><th>Frequency</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Daily</td><td>Every day</td></tr>
+            <tr><td>Weekly</td><td>Once per week on a specific weekday</td></tr>
+            <tr><td>Monthly</td><td>Once per month on a specific day</td></tr>
+            <tr><td>Bimonthly</td><td>Every two months</td></tr>
+            <tr><td>Quarterly</td><td>Every three months</td></tr>
+            <tr><td>Semi-annually</td><td>Every six months</td></tr>
+            <tr><td>Annually</td><td>Once per year</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2><span lang="de">Ausnahmen</span><span lang="en">Exceptions</span></h2>
+      <p lang="de">Manchmal weicht ein einzelner Monat vom Standard ab &ndash; z.&thinsp;B. eine höhere Stromrechnung oder ein ausgesetzter Beitrag. Dafür gibt es Ausnahmen.</p>
+      <p lang="en">Sometimes a single month deviates from the standard &ndash; e.g. a higher electricity bill or a skipped payment. Exceptions handle this.</p>
+
+      <h3><span lang="de">Betrag für eine Einzelbuchung ändern</span><span lang="en">Change Amount for a Single Entry</span></h3>
+      <ol lang="de">
+        <li>Gehe zum <a href="dashboard.html">Dashboard</a> und finde die geplante Transaktion.</li>
+        <li>Klicke darauf und wähle <strong>&bdquo;Betrag ändern&ldquo;</strong>.</li>
+        <li>Gib den abweichenden Betrag ein.</li>
+        <li>Wähle, ob die Änderung nur <strong>für diesen Monat</strong> oder <strong>für alle zukünftigen</strong> gelten soll.</li>
+      </ol>
+      <ol lang="en">
+        <li>Go to the <a href="dashboard.html">Dashboard</a> and find the planned transaction.</li>
+        <li>Click on it and select <strong>"Change amount"</strong>.</li>
+        <li>Enter the different amount.</li>
+        <li>Choose whether the change applies <strong>only to this month</strong> or <strong>to all future</strong> entries.</li>
+      </ol>
+
+      <h3><span lang="de">Einzelbuchung überspringen</span><span lang="en">Skip a Single Entry</span></h3>
+      <p lang="de">Du kannst eine einzelne Buchung eines Dauerauftrags überspringen, ohne den gesamten Dauerauftrag zu deaktivieren.</p>
+      <p lang="en">You can skip a single entry of a recurring transaction without deactivating the entire recurring transaction.</p>
+
+      <h3><span lang="de">Ausnahme zurücksetzen</span><span lang="en">Reset Exception</span></h3>
+      <p lang="de">Wenn du eine Ausnahme rückgängig machen willst, klicke erneut auf die geplante Transaktion und wähle <strong>&bdquo;Zurücksetzen&ldquo;</strong>. Der Originalbetrag wird wiederhergestellt.</p>
+      <p lang="en">If you want to undo an exception, click on the planned transaction again and select <strong>"Reset"</strong>. The original amount will be restored.</p>
+
+      <h2><span lang="de">Dauerauftrag bearbeiten oder löschen</span><span lang="en">Edit or Delete Recurring Transaction</span></h2>
+      <p lang="de">Auf der Daueraufträge-Seite kannst du bestehende Einträge bearbeiten (Name, Betrag, Frequenz etc.) oder vollständig löschen. Beim Löschen werden auch alle zugehörigen geplanten Transaktionen entfernt.</p>
+      <p lang="en">On the recurring page, you can edit existing entries (name, amount, frequency, etc.) or delete them entirely. Deleting also removes all associated planned transactions.</p>
+
+      <div class="callout callout-tip" lang="de">
+        <div class="callout-title">Tipp</div>
+        <p>Nutze Daueraufträge auch für geplante Einnahmen wie dein Gehalt. So siehst du auf dem Dashboard, wie viel Budget du im laufenden Monat noch zur Verfügung hast.</p>
+      </div>
+      <div class="callout callout-tip" lang="en">
+        <div class="callout-title">Tip</div>
+        <p>Use recurring transactions also for planned income like your salary. This way you can see on the dashboard how much budget you have left for the current month.</p>
+      </div>
+
+      <div class="page-nav">
+        <a href="transactions.html">
+          <div class="page-nav-label"><span lang="de">&larr; Vorherige Seite</span><span lang="en">&larr; Previous Page</span></div>
+          <div class="page-nav-title"><span lang="de">Transaktionen</span><span lang="en">Transactions</span></div>
+        </a>
+        <a href="accounts.html" class="page-nav-next">
+          <div class="page-nav-label"><span lang="de">Nächste Seite &rarr;</span><span lang="en">Next Page &rarr;</span></div>
+          <div class="page-nav-title"><span lang="de">Konten</span><span lang="en">Accounts</span></div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2025 Financer</span>
+    <div class="footer-links">
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Feature anfragen</span><span lang="en">Request Feature</span></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+    document.querySelectorAll('.sidebar-link').forEach(function(link) {
+      link.addEventListener('click', function() { if (window.innerWidth <= 768) toggleSidebar(); });
+    });
+    function toggleLang() {
+      var lang = document.documentElement.lang === 'de' ? 'en' : 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+      localStorage.setItem('lang', lang);
+    }
+    (function() {
+      var lang = localStorage.getItem('lang') || 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+    })();
+  </script>
+</body>
+</html>

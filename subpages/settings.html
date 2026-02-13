@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-de="Einstellungen – Financer Docs" data-en="Settings – Financer Docs">Einstellungen – Financer Docs</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menü">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="../index.html" class="header-logo">
+        <img src="../assets/logo.png" alt="Financer">
+        <span>Docs</span>
+      </a>
+    </div>
+    <div class="header-links">
+      <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+      <a href="https://financer.getbugio.com" class="btn-bug" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Erste Schritte</span><span lang="en">Getting Started</span></div>
+      <a href="../index.html" class="sidebar-link"><span lang="de">Übersicht</span><span lang="en">Overview</span></a>
+      <a href="setup.html" class="sidebar-link"><span lang="de">Ersteinrichtung</span><span lang="en">Initial Setup</span></a>
+      <a href="login.html" class="sidebar-link"><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Bedienung</span><span lang="en">Usage</span></div>
+      <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+      <a href="transactions.html" class="sidebar-link"><span lang="de">Transaktionen</span><span lang="en">Transactions</span></a>
+      <a href="recurring.html" class="sidebar-link"><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></a>
+      <a href="accounts.html" class="sidebar-link"><span lang="de">Konten</span><span lang="en">Accounts</span></a>
+      <a href="categories.html" class="sidebar-link"><span lang="de">Kategorien</span><span lang="en">Categories</span></a>
+      <a href="analytics.html" class="sidebar-link"><span lang="de">Auswertungen</span><span lang="en">Analytics</span></a>
+      <a href="creditcards.html" class="sidebar-link"><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Sonstiges</span><span lang="en">Other</span></div>
+      <a href="settings.html" class="sidebar-link active"><span lang="de">Einstellungen</span><span lang="en">Settings</span></a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">Docs</a><span>/</span><span lang="de">Einstellungen</span><span lang="en">Settings</span>
+      </div>
+
+      <h1><span lang="de">Einstellungen</span><span lang="en">Settings</span></h1>
+      <p class="lead" lang="de">In den Einstellungen kannst du das Erscheinungsbild anpassen, dein Passwort ändern, 2FA konfigurieren und dich abmelden.</p>
+      <p class="lead" lang="en">In the settings you can customize the appearance, change your password, configure 2FA, and log out.</p>
+
+      <p lang="de">Du erreichst die Einstellungen über das <strong>Zahnrad-Symbol</strong> in der Sidebar (Desktop) oder über das Menü <strong>&bdquo;Mehr&ldquo;</strong> (Mobil).</p>
+      <p lang="en">You can access the settings via the <strong>gear icon</strong> in the sidebar (desktop) or via the <strong>"More"</strong> menu (mobile).</p>
+
+      <h2><span lang="de">Erscheinungsbild / Theme</span><span lang="en">Appearance / Theme</span></h2>
+      <p lang="de">Financer bietet zwei Themes:</p>
+      <p lang="en">Financer offers two themes:</p>
+      <ul lang="de">
+        <li><strong>Dark Mode</strong> (Standard) &ndash; Dunkles Farbschema, angenehm für die Augen.</li>
+        <li><strong>Light Mode</strong> &ndash; Helles Farbschema.</li>
+      </ul>
+      <ul lang="en">
+        <li><strong>Dark Mode</strong> (default) &ndash; Dark color scheme, easy on the eyes.</li>
+        <li><strong>Light Mode</strong> &ndash; Light color scheme.</li>
+      </ul>
+      <p lang="de">Wechsle das Theme über den <strong>Toggle-Schalter</strong> im Abschnitt &bdquo;Erscheinungsbild&ldquo;. Die Einstellung wird lokal im Browser gespeichert und gilt sofort.</p>
+      <p lang="en">Switch the theme via the <strong>toggle switch</strong> in the "Appearance" section. The setting is stored locally in the browser and takes effect immediately.</p>
+
+      <h2><span lang="de">Passwort ändern</span><span lang="en">Change Password</span></h2>
+      <ol class="steps" lang="de">
+        <li>Scrolle zum Abschnitt <strong>&bdquo;Passwort ändern&ldquo;</strong>.</li>
+        <li>Gib dein <strong>aktuelles Passwort</strong> ein.</li>
+        <li>Gib dein <strong>neues Passwort</strong> ein (mindestens 4 Zeichen).</li>
+        <li>Bestätige das neue Passwort.</li>
+        <li>Klicke auf <strong>&bdquo;Passwort ändern&ldquo;</strong>.</li>
+      </ol>
+      <ol class="steps" lang="en">
+        <li>Scroll to the <strong>"Change Password"</strong> section.</li>
+        <li>Enter your <strong>current password</strong>.</li>
+        <li>Enter your <strong>new password</strong> (at least 4 characters).</li>
+        <li>Confirm the new password.</li>
+        <li>Click <strong>"Change Password"</strong>.</li>
+      </ol>
+
+      <div class="callout callout-warn" lang="de">
+        <div class="callout-title">Hinweis</div>
+        <p>Merke dir dein neues Passwort gut. Es gibt keine Passwort-Zurücksetzen-Funktion per E-Mail, da Financer keine E-Mail-Adressen speichert.</p>
+      </div>
+      <div class="callout callout-warn" lang="en">
+        <div class="callout-title">Note</div>
+        <p>Remember your new password well. There is no password reset via email, as Financer does not store email addresses.</p>
+      </div>
+
+      <h2><span lang="de">Zwei-Faktor-Authentifizierung (2FA)</span><span lang="en">Two-Factor Authentication (2FA)</span></h2>
+      <p lang="de">Hier kannst du 2FA aktivieren, deaktivieren und Backup-Codes verwalten. Eine ausführliche Anleitung findest du unter <a href="login.html">Anmeldung &amp; 2FA</a>.</p>
+      <p lang="en">Here you can enable, disable 2FA and manage backup codes. A detailed guide can be found at <a href="login.html">Login &amp; 2FA</a>.</p>
+
+      <div lang="de">
+        <table>
+          <thead>
+            <tr><th>Aktion</th><th>Beschreibung</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>2FA aktivieren</strong></td><td>QR-Code scannen, Code verifizieren, Backup-Codes sichern.</td></tr>
+            <tr><td><strong>2FA deaktivieren</strong></td><td>Passwort und aktuellen 2FA-Code eingeben.</td></tr>
+            <tr><td><strong>Neue Backup-Codes</strong></td><td>Generiert 10 neue Backup-Codes. Alle bisherigen werden ungültig.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div lang="en">
+        <table>
+          <thead>
+            <tr><th>Action</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Enable 2FA</strong></td><td>Scan QR code, verify code, save backup codes.</td></tr>
+            <tr><td><strong>Disable 2FA</strong></td><td>Enter password and current 2FA code.</td></tr>
+            <tr><td><strong>New Backup Codes</strong></td><td>Generates 10 new backup codes. All previous ones become invalid.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2><span lang="de">Abmelden</span><span lang="en">Log Out</span></h2>
+      <p lang="de">Klicke auf <strong>&bdquo;Abmelden&ldquo;</strong>, um deine aktuelle Sitzung zu beenden. Du wirst zur Login-Seite weitergeleitet und musst dich erneut anmelden.</p>
+      <p lang="en">Click <strong>"Log out"</strong> to end your current session. You will be redirected to the login page and need to log in again.</p>
+
+      <h2><span lang="de">App-Informationen</span><span lang="en">App Information</span></h2>
+      <p lang="de">Im unteren Bereich der Einstellungen findest du:</p>
+      <p lang="en">At the bottom of the settings, you will find:</p>
+      <ul lang="de">
+        <li><strong>Version</strong> &ndash; Die aktuelle Version von Financer.</li>
+        <li><strong>Lizenz</strong> &ndash; MIT-Lizenz.</li>
+      </ul>
+      <ul lang="en">
+        <li><strong>Version</strong> &ndash; The current version of Financer.</li>
+        <li><strong>License</strong> &ndash; MIT License.</li>
+      </ul>
+
+      <h2><span lang="de">Feedback &amp; Probleme</span><span lang="en">Feedback &amp; Issues</span></h2>
+      <p lang="de">Hast du einen Fehler gefunden oder eine Idee für eine neue Funktion? Melde es unter <a href="https://financer.getbugio.com" target="_blank">bugs.itwtserv.ovh</a>.</p>
+      <p lang="en">Found a bug or have an idea for a new feature? Report it at <a href="https://financer.getbugio.com" target="_blank">bugs.itwtserv.ovh</a>.</p>
+
+      <div class="page-nav">
+        <a href="creditcards.html">
+          <div class="page-nav-label"><span lang="de">&larr; Vorherige Seite</span><span lang="en">&larr; Previous Page</span></div>
+          <div class="page-nav-title"><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></div>
+        </a>
+        <a href="../index.html" class="page-nav-next">
+          <div class="page-nav-label"><span lang="de">Zur Startseite &rarr;</span><span lang="en">Back to Home &rarr;</span></div>
+          <div class="page-nav-title"><span lang="de">Übersicht</span><span lang="en">Overview</span></div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2025 Financer</span>
+    <div class="footer-links">
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Feature anfragen</span><span lang="en">Request Feature</span></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+    document.querySelectorAll('.sidebar-link').forEach(function(link) {
+      link.addEventListener('click', function() { if (window.innerWidth <= 768) toggleSidebar(); });
+    });
+    function toggleLang() {
+      var lang = document.documentElement.lang === 'de' ? 'en' : 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+      localStorage.setItem('lang', lang);
+    }
+    (function() {
+      var lang = localStorage.getItem('lang') || 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+    })();
+  </script>
+</body>
+</html>

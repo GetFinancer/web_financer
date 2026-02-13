@@ -1,0 +1,12 @@
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  X-XSS-Protection: 1; mode=block
+  Strict-Transport-Security: max-age=63072000; includeSubdomains; preload
+  Content-Security-Policy: default-src 'none'; prefetch-src 'self'; media-src 'self'; script-src 'self'; font-src 'self' https://fonts.gstatic.com; img-src 'self'; style-src 'self' https://fonts.googleapis.com; frame-ancestors 'none'; form-action 'none'; connect-src 'self';
+  Permissions-Policy: document-domain=()
+  X-Robots-Tag: nosnippet
+
+https://itwt.pages.dev/*
+  X-Robots-Tag: noindex

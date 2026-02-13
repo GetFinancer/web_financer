@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-de="Transaktionen – Financer Docs" data-en="Transactions – Financer Docs">Transaktionen – Financer Docs</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menü">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="../index.html" class="header-logo">
+        <img src="../assets/logo.png" alt="Financer">
+        <span>Docs</span>
+      </a>
+    </div>
+    <div class="header-links">
+      <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+      <a href="https://financer.getbugio.com" class="btn-bug" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Erste Schritte</span><span lang="en">Getting Started</span></div>
+      <a href="../index.html" class="sidebar-link"><span lang="de">Übersicht</span><span lang="en">Overview</span></a>
+      <a href="setup.html" class="sidebar-link"><span lang="de">Ersteinrichtung</span><span lang="en">Initial Setup</span></a>
+      <a href="login.html" class="sidebar-link"><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Bedienung</span><span lang="en">Usage</span></div>
+      <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+      <a href="transactions.html" class="sidebar-link active"><span lang="de">Transaktionen</span><span lang="en">Transactions</span></a>
+      <a href="recurring.html" class="sidebar-link"><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></a>
+      <a href="accounts.html" class="sidebar-link"><span lang="de">Konten</span><span lang="en">Accounts</span></a>
+      <a href="categories.html" class="sidebar-link"><span lang="de">Kategorien</span><span lang="en">Categories</span></a>
+      <a href="analytics.html" class="sidebar-link"><span lang="de">Auswertungen</span><span lang="en">Analytics</span></a>
+      <a href="creditcards.html" class="sidebar-link"><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Sonstiges</span><span lang="en">Other</span></div>
+      <a href="settings.html" class="sidebar-link"><span lang="de">Einstellungen</span><span lang="en">Settings</span></a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">Docs</a><span>/</span><span lang="de">Transaktionen</span><span lang="en">Transactions</span>
+      </div>
+
+      <h1><span lang="de">Transaktionen</span><span lang="en">Transactions</span></h1>
+      <p class="lead" lang="de">Auf der Transaktionsseite siehst du alle Buchungen und kannst neue erstellen, bestehende bearbeiten oder löschen.</p>
+      <p class="lead" lang="en">On the transactions page you can see all entries and create new ones, edit existing ones, or delete them.</p>
+
+      <h2><span lang="de">Transaktionstypen</span><span lang="en">Transaction Types</span></h2>
+      <p lang="de">Jede Transaktion hat einen von drei Typen:</p>
+      <p lang="en">Each transaction has one of three types:</p>
+      <div lang="de">
+        <table>
+          <thead>
+            <tr><th>Typ</th><th>Beschreibung</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Einnahme</strong></td><td>Geld kommt rein (z.&thinsp;B. Gehalt, Erstattungen).</td></tr>
+            <tr><td><strong>Ausgabe</strong></td><td>Geld geht raus (z.&thinsp;B. Einkauf, Miete).</td></tr>
+            <tr><td><strong>Umbuchung</strong></td><td>Geld wird zwischen zwei eigenen Konten verschoben.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div lang="en">
+        <table>
+          <thead>
+            <tr><th>Type</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Income</strong></td><td>Money coming in (e.g. salary, refunds).</td></tr>
+            <tr><td><strong>Expense</strong></td><td>Money going out (e.g. shopping, rent).</td></tr>
+            <tr><td><strong>Transfer</strong></td><td>Money moved between your own accounts.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2><span lang="de">Neue Transaktion erstellen</span><span lang="en">Create New Transaction</span></h2>
+      <ol class="steps" lang="de">
+        <li>Klicke auf den <strong>+&thinsp;Button</strong> oben rechts oder nutze den schnellen Hinzufügen-Button auf dem Dashboard.</li>
+        <li>Wähle den <strong>Typ</strong> (Einnahme, Ausgabe oder Umbuchung).</li>
+        <li>Gib den <strong>Betrag</strong> ein.</li>
+        <li>Wähle das <strong>Konto</strong>, auf das die Buchung geht.</li>
+        <li>Wähle eine <strong>Kategorie</strong> für die Zuordnung.</li>
+        <li>Optional: Gib eine <strong>Beschreibung</strong> ein und wähle ein <strong>Datum</strong>.</li>
+        <li>Klicke auf <strong>&bdquo;Speichern&ldquo;</strong>.</li>
+      </ol>
+      <ol class="steps" lang="en">
+        <li>Click the <strong>+ button</strong> in the top right or use the quick add button on the dashboard.</li>
+        <li>Select the <strong>type</strong> (income, expense, or transfer).</li>
+        <li>Enter the <strong>amount</strong>.</li>
+        <li>Select the <strong>account</strong> for the transaction.</li>
+        <li>Select a <strong>category</strong> for classification.</li>
+        <li>Optional: Enter a <strong>description</strong> and select a <strong>date</strong>.</li>
+        <li>Click <strong>"Save"</strong>.</li>
+      </ol>
+
+      <div class="callout callout-tip" lang="de">
+        <div class="callout-title">Tipp</div>
+        <p>Bei einer Umbuchung wählst du ein Quell- und ein Zielkonto. Der Betrag wird vom Quellkonto abgezogen und dem Zielkonto gutgeschrieben.</p>
+      </div>
+      <div class="callout callout-tip" lang="en">
+        <div class="callout-title">Tip</div>
+        <p>For a transfer, you select a source and a destination account. The amount is deducted from the source account and credited to the destination account.</p>
+      </div>
+
+      <h2><span lang="de">Transaktionen filtern</span><span lang="en">Filter Transactions</span></h2>
+      <p lang="de">Über die Filter am oberen Rand der Liste kannst du die angezeigten Transaktionen einschränken:</p>
+      <p lang="en">Using the filters at the top of the list, you can narrow down the displayed transactions:</p>
+      <ul lang="de">
+        <li><strong>Zeitraum</strong> &ndash; Wähle einen Datumsbereich.</li>
+        <li><strong>Konto</strong> &ndash; Zeige nur Buchungen eines bestimmten Kontos.</li>
+        <li><strong>Kategorie</strong> &ndash; Filtere nach einer Kategorie.</li>
+        <li><strong>Typ</strong> &ndash; Nur Einnahmen, nur Ausgaben oder nur Umbuchungen.</li>
+      </ul>
+      <ul lang="en">
+        <li><strong>Period</strong> &ndash; Select a date range.</li>
+        <li><strong>Account</strong> &ndash; Show only entries for a specific account.</li>
+        <li><strong>Category</strong> &ndash; Filter by category.</li>
+        <li><strong>Type</strong> &ndash; Only income, only expenses, or only transfers.</li>
+      </ul>
+
+      <h2><span lang="de">Transaktion bearbeiten</span><span lang="en">Edit Transaction</span></h2>
+      <p lang="de">Klicke auf eine Transaktion in der Liste, um sie zu bearbeiten. Ändere die gewünschten Felder und klicke auf <strong>&bdquo;Speichern&ldquo;</strong>.</p>
+      <p lang="en">Click on a transaction in the list to edit it. Change the desired fields and click <strong>"Save"</strong>.</p>
+
+      <h2><span lang="de">Transaktion löschen</span><span lang="en">Delete Transaction</span></h2>
+      <p lang="de">Beim Bearbeiten einer Transaktion findest du unten die Option zum Löschen. Gelöschte Transaktionen können nicht wiederhergestellt werden.</p>
+      <p lang="en">When editing a transaction, you will find the delete option at the bottom. Deleted transactions cannot be restored.</p>
+
+      <div class="callout callout-warn" lang="de">
+        <div class="callout-title">Hinweis</div>
+        <p>Das Löschen einer Transaktion beeinflusst sofort den Kontostand des zugehörigen Kontos.</p>
+      </div>
+      <div class="callout callout-warn" lang="en">
+        <div class="callout-title">Note</div>
+        <p>Deleting a transaction immediately affects the balance of the associated account.</p>
+      </div>
+
+      <div class="page-nav">
+        <a href="dashboard.html">
+          <div class="page-nav-label"><span lang="de">&larr; Vorherige Seite</span><span lang="en">&larr; Previous Page</span></div>
+          <div class="page-nav-title">Dashboard</div>
+        </a>
+        <a href="recurring.html" class="page-nav-next">
+          <div class="page-nav-label"><span lang="de">Nächste Seite &rarr;</span><span lang="en">Next Page &rarr;</span></div>
+          <div class="page-nav-title"><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2025 Financer</span>
+    <div class="footer-links">
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Feature anfragen</span><span lang="en">Request Feature</span></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+    document.querySelectorAll('.sidebar-link').forEach(function(link) {
+      link.addEventListener('click', function() { if (window.innerWidth <= 768) toggleSidebar(); });
+    });
+    function toggleLang() {
+      var lang = document.documentElement.lang === 'de' ? 'en' : 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+      localStorage.setItem('lang', lang);
+    }
+    (function() {
+      var lang = localStorage.getItem('lang') || 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+    })();
+  </script>
+</body>
+</html>

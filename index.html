@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-de="Financer Dokumentation" data-en="Financer Documentation">Financer Dokumentation</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menü">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="index.html" class="header-logo">
+        <img src="assets/logo.png" alt="Financer">
+        <span>Docs</span>
+      </a>
+    </div>
+    <div class="header-links">
+      <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+      <a href="https://financer.getbugio.com" class="btn-bug" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Erste Schritte</span><span lang="en">Getting Started</span></div>
+      <a href="index.html" class="sidebar-link active"><span lang="de">Übersicht</span><span lang="en">Overview</span></a>
+      <a href="subpages/setup.html" class="sidebar-link"><span lang="de">Ersteinrichtung</span><span lang="en">Initial Setup</span></a>
+      <a href="subpages/login.html" class="sidebar-link"><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Bedienung</span><span lang="en">Usage</span></div>
+      <a href="subpages/dashboard.html" class="sidebar-link">Dashboard</a>
+      <a href="subpages/transactions.html" class="sidebar-link"><span lang="de">Transaktionen</span><span lang="en">Transactions</span></a>
+      <a href="subpages/recurring.html" class="sidebar-link"><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></a>
+      <a href="subpages/accounts.html" class="sidebar-link"><span lang="de">Konten</span><span lang="en">Accounts</span></a>
+      <a href="subpages/categories.html" class="sidebar-link"><span lang="de">Kategorien</span><span lang="en">Categories</span></a>
+      <a href="subpages/analytics.html" class="sidebar-link"><span lang="de">Auswertungen</span><span lang="en">Analytics</span></a>
+      <a href="subpages/creditcards.html" class="sidebar-link"><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Sonstiges</span><span lang="en">Other</span></div>
+      <a href="subpages/settings.html" class="sidebar-link"><span lang="de">Einstellungen</span><span lang="en">Settings</span></a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-inner">
+      <h1><span lang="de">Financer Handbuch</span><span lang="en">Financer Handbook</span></h1>
+      <p lang="de">Dein Leitfaden zur Bedienung von Financer &ndash; der selbstgehosteten App für deine persönlichen Finanzen.</p>
+      <p lang="en">Your guide to using Financer &ndash; the self-hosted app for your personal finances.</p>
+      <div class="hero-actions">
+        <a href="subpages/setup.html" class="btn btn-primary"><span lang="de">Jetzt starten</span><span lang="en">Get Started</span></a>
+        <a href="https://financer.getbugio.com" class="btn btn-outline" target="_blank"><span lang="de">Feature anfragen</span><span lang="en">Request Feature</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <main class="content" style="margin-top:0;">
+    <div class="content-inner">
+
+      <h2 style="margin-top:0;"><span lang="de">Was ist Financer?</span><span lang="en">What is Financer?</span></h2>
+      <p lang="de">Financer ist eine leichtgewichtige, selbstgehostete Web-App zur Verwaltung deiner persönlichen Finanzen. Sie läuft als Progressive Web App (PWA) und kann wie eine native App auf deinem Smartphone installiert werden.</p>
+      <p lang="en">Financer is a lightweight, self-hosted web app for managing your personal finances. It runs as a Progressive Web App (PWA) and can be installed on your smartphone just like a native app.</p>
+
+      <h2><span lang="de">Funktionen im Überblick</span><span lang="en">Features at a Glance</span></h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <a href="subpages/dashboard.html">
+            <h4>Dashboard</h4>
+            <p lang="de">Monatliche Übersicht mit Salden, Einnahmen und Ausgaben auf einen Blick.</p>
+            <p lang="en">Monthly overview with balances, income, and expenses at a glance.</p>
+          </a>
+        </div>
+        <div class="feature-card">
+          <a href="subpages/transactions.html">
+            <h4><span lang="de">Transaktionen</span><span lang="en">Transactions</span></h4>
+            <p lang="de">Alle Buchungen erfassen, bearbeiten und filtern.</p>
+            <p lang="en">Record, edit, and filter all your transactions.</p>
+          </a>
+        </div>
+        <div class="feature-card">
+          <a href="subpages/recurring.html">
+            <h4><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></h4>
+            <p lang="de">Wiederkehrende Buchungen planen und Ausnahmen festlegen.</p>
+            <p lang="en">Schedule recurring transactions and define exceptions.</p>
+          </a>
+        </div>
+        <div class="feature-card">
+          <a href="subpages/accounts.html">
+            <h4><span lang="de">Konten</span><span lang="en">Accounts</span></h4>
+            <p lang="de">Bank, Kreditkarte, Bargeld und Sparen verwalten.</p>
+            <p lang="en">Manage bank, credit card, cash, and savings accounts.</p>
+          </a>
+        </div>
+        <div class="feature-card">
+          <a href="subpages/categories.html">
+            <h4><span lang="de">Kategorien</span><span lang="en">Categories</span></h4>
+            <p lang="de">Einnahmen und Ausgaben nach eigenen Kategorien ordnen.</p>
+            <p lang="en">Organize income and expenses by custom categories.</p>
+          </a>
+        </div>
+        <div class="feature-card">
+          <a href="subpages/analytics.html">
+            <h4><span lang="de">Auswertungen</span><span lang="en">Analytics</span></h4>
+            <p lang="de">Diagramme und Trends zu deinen Finanzen.</p>
+            <p lang="en">Charts and trends for your finances.</p>
+          </a>
+        </div>
+        <div class="feature-card">
+          <a href="subpages/creditcards.html">
+            <h4><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></h4>
+            <p lang="de">Abrechnungszyklen und automatische Zahlungserinnerungen.</p>
+            <p lang="en">Billing cycles and automatic payment reminders.</p>
+          </a>
+        </div>
+        <div class="feature-card">
+          <a href="subpages/settings.html">
+            <h4><span lang="de">Einstellungen</span><span lang="en">Settings</span></h4>
+            <p lang="de">Theme, Passwort und Zwei-Faktor-Authentifizierung konfigurieren.</p>
+            <p lang="en">Configure theme, password, and two-factor authentication.</p>
+          </a>
+        </div>
+      </div>
+
+      <h2><span lang="de">Du hast einen Fehler gefunden?</span><span lang="en">Found a Bug?</span></h2>
+      <p lang="de">Melde Bugs oder schlage neue Funktionen vor unter <a href="https://financer.getbugio.com" target="_blank">bugs.itwtserv.ovh</a>.</p>
+      <p lang="en">Report bugs or suggest new features at <a href="https://financer.getbugio.com" target="_blank">bugs.itwtserv.ovh</a>.</p>
+
+      <!-- Page nav -->
+      <div class="page-nav">
+        <div></div>
+        <a href="subpages/setup.html" class="page-nav-next">
+          <div class="page-nav-label"><span lang="de">Nächste Seite &rarr;</span><span lang="en">Next Page &rarr;</span></div>
+          <div class="page-nav-title"><span lang="de">Ersteinrichtung</span><span lang="en">Initial Setup</span></div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span>&copy; 2025 Financer</span>
+    <div class="footer-links">
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Feature anfragen</span><span lang="en">Request Feature</span></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+    document.querySelectorAll('.sidebar-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) toggleSidebar();
+      });
+    });
+    function toggleLang() {
+      var lang = document.documentElement.lang === 'de' ? 'en' : 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+      localStorage.setItem('lang', lang);
+    }
+    (function() {
+      var lang = localStorage.getItem('lang') || 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+    })();
+  </script>
+</body>
+</html>

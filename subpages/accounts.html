@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-de="Konten – Financer Docs" data-en="Accounts – Financer Docs">Konten – Financer Docs</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menü">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="../index.html" class="header-logo">
+        <img src="../assets/logo.png" alt="Financer">
+        <span>Docs</span>
+      </a>
+    </div>
+    <div class="header-links">
+      <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+      <a href="https://financer.getbugio.com" class="btn-bug" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Erste Schritte</span><span lang="en">Getting Started</span></div>
+      <a href="../index.html" class="sidebar-link"><span lang="de">Übersicht</span><span lang="en">Overview</span></a>
+      <a href="setup.html" class="sidebar-link"><span lang="de">Ersteinrichtung</span><span lang="en">Initial Setup</span></a>
+      <a href="login.html" class="sidebar-link"><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Bedienung</span><span lang="en">Usage</span></div>
+      <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+      <a href="transactions.html" class="sidebar-link"><span lang="de">Transaktionen</span><span lang="en">Transactions</span></a>
+      <a href="recurring.html" class="sidebar-link"><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></a>
+      <a href="accounts.html" class="sidebar-link active"><span lang="de">Konten</span><span lang="en">Accounts</span></a>
+      <a href="categories.html" class="sidebar-link"><span lang="de">Kategorien</span><span lang="en">Categories</span></a>
+      <a href="analytics.html" class="sidebar-link"><span lang="de">Auswertungen</span><span lang="en">Analytics</span></a>
+      <a href="creditcards.html" class="sidebar-link"><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Sonstiges</span><span lang="en">Other</span></div>
+      <a href="settings.html" class="sidebar-link"><span lang="de">Einstellungen</span><span lang="en">Settings</span></a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">Docs</a><span>/</span><span lang="de">Konten</span><span lang="en">Accounts</span>
+      </div>
+
+      <h1><span lang="de">Konten</span><span lang="en">Accounts</span></h1>
+      <p class="lead" lang="de">Konten bilden die Grundlage von Financer. Jede Transaktion ist einem Konto zugeordnet. Lege alle deine Konten an, um einen vollständigen Überblick zu erhalten.</p>
+      <p class="lead" lang="en">Accounts form the foundation of Financer. Every transaction is assigned to an account. Create all your accounts to get a complete overview.</p>
+
+      <h2><span lang="de">Kontotypen</span><span lang="en">Account Types</span></h2>
+      <div lang="de">
+        <table>
+          <thead>
+            <tr><th>Typ</th><th>Beschreibung</th><th>Beispiel</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Bank</strong></td><td>Girokonten und reguläre Bankkonten.</td><td>Sparkasse Girokonto</td></tr>
+            <tr><td><strong>Kreditkarte</strong></td><td>Kreditkartenkonten mit Abrechnungszyklus.</td><td>Visa, Mastercard</td></tr>
+            <tr><td><strong>Bargeld</strong></td><td>Für Bargeld-Transaktionen.</td><td>Geldbörse</td></tr>
+            <tr><td><strong>Sparen</strong></td><td>Sparkonten, Tagesgeld etc.</td><td>Tagesgeldkonto</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div lang="en">
+        <table>
+          <thead>
+            <tr><th>Type</th><th>Description</th><th>Example</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Bank</strong></td><td>Checking and regular bank accounts.</td><td>Main checking account</td></tr>
+            <tr><td><strong>Credit Card</strong></td><td>Credit card accounts with billing cycles.</td><td>Visa, Mastercard</td></tr>
+            <tr><td><strong>Cash</strong></td><td>For cash transactions.</td><td>Wallet</td></tr>
+            <tr><td><strong>Savings</strong></td><td>Savings accounts, etc.</td><td>Savings account</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2><span lang="de">Neues Konto erstellen</span><span lang="en">Create New Account</span></h2>
+      <ol class="steps" lang="de">
+        <li>Navigiere zur Seite <strong>&bdquo;Konten&ldquo;</strong>.</li>
+        <li>Klicke auf <strong>&bdquo;Neues Konto&ldquo;</strong>.</li>
+        <li>Gib einen <strong>Namen</strong> ein.</li>
+        <li>Wähle den <strong>Kontotyp</strong>.</li>
+        <li>Gib den <strong>Anfangssaldo</strong> ein &ndash; den aktuellen Stand deines Kontos.</li>
+        <li>Klicke auf <strong>&bdquo;Speichern&ldquo;</strong>.</li>
+      </ol>
+      <ol class="steps" lang="en">
+        <li>Navigate to the <strong>"Accounts"</strong> page.</li>
+        <li>Click <strong>"New account"</strong>.</li>
+        <li>Enter a <strong>name</strong>.</li>
+        <li>Select the <strong>account type</strong>.</li>
+        <li>Enter the <strong>initial balance</strong> &ndash; the current balance of your account.</li>
+        <li>Click <strong>"Save"</strong>.</li>
+      </ol>
+
+      <h2><span lang="de">Konto-Optionen</span><span lang="en">Account Options</span></h2>
+      <h3><span lang="de">Vom Budget ausschließen</span><span lang="en">Exclude from Budget</span></h3>
+      <p lang="de">Wenn du ein Konto vom Budget ausschließt, werden dessen Transaktionen nicht in die Budget-Berechnung auf dem Dashboard einbezogen. Nützlich z.&thinsp;B. für langfristiges Sparen.</p>
+      <p lang="en">When you exclude an account from the budget, its transactions are not included in the budget calculation on the dashboard. Useful for long-term savings, for example.</p>
+
+      <h3><span lang="de">Als Standard setzen</span><span lang="en">Set as Default</span></h3>
+      <p lang="de">Das Standardkonto wird beim Erstellen neuer Transaktionen automatisch vorausgewählt.</p>
+      <p lang="en">The default account is automatically preselected when creating new transactions.</p>
+
+      <h3><span lang="de">Kreditkarte verknüpfen</span><span lang="en">Link Credit Card</span></h3>
+      <p lang="de">Wenn du eine Kreditkarte erstellst, kannst du sie mit einem Bankkonto verknüpfen. Dadurch werden Kreditkartenabrechnungen als geplante Umbuchungen im Dashboard angezeigt. Mehr dazu unter <a href="creditcards.html">Kreditkarten</a>.</p>
+      <p lang="en">When you create a credit card, you can link it with a bank account. This causes credit card statements to appear as planned transfers on the dashboard. More details at <a href="creditcards.html">Credit Cards</a>.</p>
+
+      <h2><span lang="de">Kontostand</span><span lang="en">Account Balance</span></h2>
+      <p lang="de">Der Kontostand wird automatisch berechnet aus:</p>
+      <p lang="en">The account balance is automatically calculated from:</p>
+      <p lang="de"><strong>Anfangssaldo + alle Einnahmen &minus; alle Ausgaben &plusmn; Umbuchungen</strong></p>
+      <p lang="en"><strong>Initial balance + all income &minus; all expenses &plusmn; transfers</strong></p>
+      <p lang="de">Du musst den Saldo nie manuell aktualisieren &ndash; er ergibt sich immer aus deinen Transaktionen.</p>
+      <p lang="en">You never need to manually update the balance &ndash; it always results from your transactions.</p>
+
+      <h2><span lang="de">Konto bearbeiten oder löschen</span><span lang="en">Edit or Delete Account</span></h2>
+      <p lang="de">Klicke auf ein bestehendes Konto, um es zu bearbeiten. Du kannst Namen, Typ und weitere Optionen anpassen. Beim Löschen werden auch alle zugehörigen Transaktionen entfernt.</p>
+      <p lang="en">Click on an existing account to edit it. You can adjust the name, type, and other options. Deleting also removes all associated transactions.</p>
+
+      <div class="callout callout-danger" lang="de">
+        <div class="callout-title">Achtung</div>
+        <p>Das Löschen eines Kontos ist unwiderruflich und entfernt alle damit verbundenen Transaktionen.</p>
+      </div>
+      <div class="callout callout-danger" lang="en">
+        <div class="callout-title">Warning</div>
+        <p>Deleting an account is irreversible and removes all associated transactions.</p>
+      </div>
+
+      <div class="page-nav">
+        <a href="recurring.html">
+          <div class="page-nav-label"><span lang="de">&larr; Vorherige Seite</span><span lang="en">&larr; Previous Page</span></div>
+          <div class="page-nav-title"><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></div>
+        </a>
+        <a href="categories.html" class="page-nav-next">
+          <div class="page-nav-label"><span lang="de">Nächste Seite &rarr;</span><span lang="en">Next Page &rarr;</span></div>
+          <div class="page-nav-title"><span lang="de">Kategorien</span><span lang="en">Categories</span></div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2025 Financer</span>
+    <div class="footer-links">
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Feature anfragen</span><span lang="en">Request Feature</span></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+    document.querySelectorAll('.sidebar-link').forEach(function(link) {
+      link.addEventListener('click', function() { if (window.innerWidth <= 768) toggleSidebar(); });
+    });
+    function toggleLang() {
+      var lang = document.documentElement.lang === 'de' ? 'en' : 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+      localStorage.setItem('lang', lang);
+    }
+    (function() {
+      var lang = localStorage.getItem('lang') || 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+    })();
+  </script>
+</body>
+</html>
