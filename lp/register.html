@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financer — Kostenlos registrieren</title>
+  <meta name="description" content="Erstelle deinen eigenen Financer-Workspace und starte mit 14 Tagen kostenloser Testphase.">
+  <meta name="theme-color" content="#0B0B0D">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/shared-vars.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='light'||((!t)&&window.matchMedia('(prefers-color-scheme: light)').matches)){document.documentElement.classList.add('light')}})();
+  </script>
+  <style>
+    .register-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 1rem 2rem;
+    }
+    .register-card {
+      width: 100%;
+      max-width: 460px;
+      padding: 2.5rem;
+    }
+    .register-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .register-logo img {
+      height: 32px;
+    }
+    .register-title {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: hsl(var(--foreground));
+      margin-bottom: 0.5rem;
+    }
+    .register-subtitle {
+      text-align: center;
+      font-size: 0.9rem;
+      color: hsl(var(--foreground-secondary));
+      margin-bottom: 2rem;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: hsl(var(--foreground));
+      margin-bottom: 0.5rem;
+    }
+    .input-wrapper {
+      display: flex;
+      align-items: center;
+      background: hsl(var(--background-surface));
+      border: 1px solid hsl(var(--border));
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .input-wrapper:focus-within {
+      border-color: hsl(var(--primary));
+      box-shadow: 0 0 0 3px hsl(var(--glow-primary));
+    }
+    .input-wrapper.error {
+      border-color: hsl(var(--error));
+    }
+    .input-wrapper.success {
+      border-color: hsl(var(--success));
+    }
+    .input-wrapper input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      color: hsl(var(--foreground));
+    }
+    .input-wrapper input::placeholder {
+      color: hsl(var(--foreground-disabled));
+    }
+    .input-suffix {
+      padding: 0.75rem 1rem 0.75rem 0;
+      font-size: 0.9rem;
+      color: hsl(var(--foreground-secondary));
+      white-space: nowrap;
+      user-select: none;
+    }
+    .input-hint {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      min-height: 1.2rem;
+    }
+    .input-hint.error { color: hsl(var(--error)); }
+    .input-hint.success { color: hsl(var(--success)); }
+    .input-hint.info { color: hsl(var(--foreground-secondary)); }
+    .input-hint svg { flex-shrink: 0; }
+
+    .register-btn {
+      width: 100%;
+      padding: 0.85rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      color: hsl(var(--primary-foreground));
+      background: hsl(var(--primary));
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s, opacity 0.2s;
+    }
+    .register-btn:hover:not(:disabled) {
+      background: hsl(var(--primary-hover));
+    }
+    .register-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .register-footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: hsl(var(--foreground-secondary));
+    }
+    .register-footer a {
+      color: hsl(var(--primary));
+      text-decoration: none;
+    }
+    .register-footer a:hover {
+      text-decoration: underline;
+    }
+
+    .register-error {
+      background: hsl(var(--error) / 0.1);
+      border: 1px solid hsl(var(--error) / 0.3);
+      color: hsl(var(--error));
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      display: none;
+    }
+
+    .register-success {
+      text-align: center;
+      display: none;
+    }
+    .register-success .success-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      background: hsl(var(--success) / 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .register-success .success-icon svg {
+      color: hsl(var(--success));
+    }
+    .register-success h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: hsl(var(--foreground));
+      margin-bottom: 0.75rem;
+    }
+    .register-success p {
+      color: hsl(var(--foreground-secondary));
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .register-success .tenant-url {
+      display: inline-block;
+      background: hsl(var(--background-surface));
+      border: 1px solid hsl(var(--border));
+      border-radius: var(--radius);
+      padding: 0.6rem 1.2rem;
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: hsl(var(--primary));
+      margin-bottom: 1.5rem;
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 2px solid hsl(var(--primary-foreground) / 0.3);
+      border-top-color: hsl(var(--primary-foreground));
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      vertical-align: middle;
+      margin-right: 0.5rem;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .nav-actions-register {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-gradient" aria-hidden="true"></div>
+
+  <div class="page-wrapper">
+
+    <!-- ===== Minimal Navigation ===== -->
+    <nav class="nav glass-nav">
+      <div class="container nav-inner">
+        <a href="/" class="nav-logo" aria-label="Financer Home">
+          <img src="/logo.png" alt="Financer" height="28">
+        </a>
+        <div class="nav-actions-register">
+          <button class="nav-toggle-btn lang-toggle" onclick="toggleLang()" aria-label="Toggle language">EN</button>
+          <button class="nav-toggle-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+            <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== Register Form ===== -->
+    <section class="register-section">
+      <div class="glass-card-elevated register-card">
+
+        <!-- Form View -->
+        <div id="register-form-view">
+          <div class="register-logo">
+            <img src="/logo.png" alt="Financer" height="32">
+          </div>
+
+          <h1 class="register-title" data-i18n="register.title">Erstelle deinen Workspace</h1>
+          <p class="register-subtitle" data-i18n="register.subtitle">W&auml;hle einen Namen f&uuml;r deinen pers&ouml;nlichen Financer-Bereich.</p>
+
+          <div class="register-error" id="register-error"></div>
+
+          <form id="register-form" onsubmit="handleRegister(event)">
+            <div class="form-group">
+              <label class="form-label" for="tenant-input" data-i18n="register.label">Dein Workspace-Name</label>
+              <div class="input-wrapper" id="input-wrapper">
+                <input
+                  type="text"
+                  id="tenant-input"
+                  placeholder="meinname"
+                  autocomplete="off"
+                  autocapitalize="none"
+                  spellcheck="false"
+                  maxlength="63"
+                  pattern="[a-z0-9][a-z0-9-]*[a-z0-9]?"
+                  required
+                >
+                <span class="input-suffix">.getfinancer.com</span>
+              </div>
+              <div class="input-hint info" id="input-hint">
+                <span data-i18n="register.hint">Kleinbuchstaben, Zahlen und Bindestriche (1-63 Zeichen)</span>
+              </div>
+            </div>
+
+            <button type="submit" class="register-btn" id="register-btn" disabled>
+              <span data-i18n="register.button">Kostenlos starten</span>
+            </button>
+          </form>
+
+          <div class="register-footer">
+            <span data-i18n="register.trial">14 Tage kostenlos. Keine Kreditkarte n&ouml;tig.</span>
+            <br><br>
+            <a href="/" data-i18n="register.back">&larr; Zur&uuml;ck zur Startseite</a>
+          </div>
+        </div>
+
+        <!-- Success View -->
+        <div class="register-success" id="register-success-view">
+          <div class="success-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h2 data-i18n="register.success.title">Dein Workspace ist bereit!</h2>
+          <p data-i18n="register.success.desc">Du wirst gleich weitergeleitet. Falls nicht, klicke auf den Link:</p>
+          <div class="tenant-url" id="tenant-url"></div>
+          <br><br>
+          <a href="#" id="tenant-link" class="btn btn-primary" data-i18n="register.success.button">Jetzt einrichten</a>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <script src="/js/main.js"></script>
+  <script>
+    var checkTimeout = null;
+    var lastCheckedName = '';
+    var nameAvailable = false;
+    var tenantInput = document.getElementById('tenant-input');
+    var inputWrapper = document.getElementById('input-wrapper');
+    var inputHint = document.getElementById('input-hint');
+    var registerBtn = document.getElementById('register-btn');
+    var registerError = document.getElementById('register-error');
+
+    var VALID_TENANT = /^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$/;
+    var RESERVED = ['www', 'api', 'admin', 'app', 'mail', 'smtp', 'ftp', 'ns1', 'ns2'];
+
+    function getLang() {
+      return localStorage.getItem('lang') || 'de';
+    }
+
+    function t(key) {
+      var lang = getLang();
+      if (typeof translations !== 'undefined' && translations[lang] && translations[lang][key]) {
+        return translations[lang][key];
+      }
+      return key;
+    }
+
+    tenantInput.addEventListener('input', function() {
+      var val = this.value.toLowerCase().replace(/[^a-z0-9-]/g, '');
+      this.value = val;
+
+      registerError.style.display = 'none';
+      nameAvailable = false;
+      registerBtn.disabled = true;
+
+      if (checkTimeout) clearTimeout(checkTimeout);
+
+      if (!val) {
+        inputWrapper.className = 'input-wrapper';
+        inputHint.className = 'input-hint info';
+        inputHint.innerHTML = '<span>' + t('register.hint') + '</span>';
+        return;
+      }
+
+      if (!VALID_TENANT.test(val)) {
+        inputWrapper.className = 'input-wrapper error';
+        inputHint.className = 'input-hint error';
+        inputHint.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg><span>' + t('register.error.invalid') + '</span>';
+        return;
+      }
+
+      if (RESERVED.indexOf(val) !== -1) {
+        inputWrapper.className = 'input-wrapper error';
+        inputHint.className = 'input-hint error';
+        inputHint.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg><span>' + t('register.error.reserved') + '</span>';
+        return;
+      }
+
+      // Show checking state
+      inputWrapper.className = 'input-wrapper';
+      inputHint.className = 'input-hint info';
+      inputHint.innerHTML = '<span>' + t('register.checking') + '</span>';
+
+      checkTimeout = setTimeout(function() { checkAvailability(val); }, 400);
+    });
+
+    function checkAvailability(name) {
+      lastCheckedName = name;
+      fetch('/api/register/check/' + encodeURIComponent(name))
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          if (tenantInput.value.toLowerCase() !== name) return;
+          if (data.success && data.data.available) {
+            nameAvailable = true;
+            registerBtn.disabled = false;
+            inputWrapper.className = 'input-wrapper success';
+            inputHint.className = 'input-hint success';
+            inputHint.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>' + t('register.available') + '</span>';
+          } else {
+            nameAvailable = false;
+            registerBtn.disabled = true;
+            inputWrapper.className = 'input-wrapper error';
+            inputHint.className = 'input-hint error';
+            inputHint.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg><span>' + t('register.taken') + '</span>';
+          }
+        })
+        .catch(function() {
+          inputHint.className = 'input-hint error';
+          inputHint.innerHTML = '<span>' + t('register.error.network') + '</span>';
+        });
+    }
+
+    function handleRegister(e) {
+      e.preventDefault();
+      var name = tenantInput.value.toLowerCase().trim();
+      if (!name || !nameAvailable) return;
+
+      registerBtn.disabled = true;
+      registerBtn.innerHTML = '<span class="spinner"></span><span>' + t('register.creating') + '</span>';
+      registerError.style.display = 'none';
+
+      fetch('/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ tenant: name })
+      })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          if (data.success && data.data) {
+            var url = data.data.url + '/setup';
+            document.getElementById('tenant-url').textContent = url;
+            document.getElementById('tenant-link').href = url;
+            document.getElementById('register-form-view').style.display = 'none';
+            document.getElementById('register-success-view').style.display = 'block';
+
+            setTimeout(function() { window.location.href = url; }, 2500);
+          } else {
+            registerError.textContent = data.error || t('register.error.generic');
+            registerError.style.display = 'block';
+            registerBtn.disabled = false;
+            registerBtn.innerHTML = '<span>' + t('register.button') + '</span>';
+          }
+        })
+        .catch(function() {
+          registerError.textContent = t('register.error.network');
+          registerError.style.display = 'block';
+          registerBtn.disabled = false;
+          registerBtn.innerHTML = '<span>' + t('register.button') + '</span>';
+        });
+    }
+  </script>
+</body>
+</html>

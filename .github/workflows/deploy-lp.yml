@@ -1,9 +1,11 @@
-name: Deploy root to release branch
+name: Deploy LP to release-lp branch
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'lp/**'
 
 permissions:
   contents: write
@@ -23,13 +25,12 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
 
-      - name: Prepare release branch
+      - name: Prepare release-lp branch
         run: |
-          # Wechsel zu release oder erstelle ihn neu
-          if git ls-remote --exit-code origin release; then
-            git checkout -B release origin/release
+          if git ls-remote --exit-code origin release-lp; then
+            git checkout -B release-lp origin/release-lp
           else
-            git checkout --orphan release
+            git checkout --orphan release-lp
             git rm -rf .
           fi
 
@@ -38,15 +39,13 @@ jobs:
             ! -name '.git' \
             -exec rm -rf {} +
 
-          # Dateien aus main übernehmen (mit Ausschlüssen)
-          git checkout main -- .
+          # Nur lp/ Inhalt aus main übernehmen
+          git checkout main -- lp/
+          cp -r lp/. .
+          rm -rf lp
 
-          rm -rf .github
-          rm -f .gitignore
-          rm -f .gitattributes
-
-      - name: Commit and push to release
+      - name: Commit and push to release-lp
         run: |
           git add .
-          git commit -m "Deploy from main (${GITHUB_SHA})" || echo "Nothing to commit"
-          git push origin release --force
+          git commit -m "Deploy LP from main (${GITHUB_SHA})" || echo "Nothing to commit"
+          git push origin release-lp --force
