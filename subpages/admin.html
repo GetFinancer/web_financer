@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-de="Admin Panel – Financer Docs" data-en="Admin Panel – Financer Docs">Admin Panel – Financer Docs</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menü">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="../index.html" class="header-logo">
+        <img src="../assets/logo.png" alt="Financer">
+        <span>Docs</span>
+      </a>
+    </div>
+    <div class="header-links">
+      <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+      <a href="https://financer.getbugio.com" class="btn-bug" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Erste Schritte</span><span lang="en">Getting Started</span></div>
+      <a href="../index.html" class="sidebar-link"><span lang="de">Übersicht</span><span lang="en">Overview</span></a>
+      <a href="setup.html" class="sidebar-link"><span lang="de">Ersteinrichtung</span><span lang="en">Initial Setup</span></a>
+      <a href="login.html" class="sidebar-link"><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Bedienung</span><span lang="en">Usage</span></div>
+      <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+      <a href="transactions.html" class="sidebar-link"><span lang="de">Transaktionen</span><span lang="en">Transactions</span></a>
+      <a href="recurring.html" class="sidebar-link"><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></a>
+      <a href="accounts.html" class="sidebar-link"><span lang="de">Konten</span><span lang="en">Accounts</span></a>
+      <a href="categories.html" class="sidebar-link"><span lang="de">Kategorien</span><span lang="en">Categories</span></a>
+      <a href="analytics.html" class="sidebar-link"><span lang="de">Auswertungen</span><span lang="en">Analytics</span></a>
+      <a href="creditcards.html" class="sidebar-link"><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Sonstiges</span><span lang="en">Other</span></div>
+      <a href="settings.html" class="sidebar-link"><span lang="de">Einstellungen</span><span lang="en">Settings</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Hosting &amp; Admin</span><span lang="en">Hosting &amp; Admin</span></div>
+      <a href="selfhosting.html" class="sidebar-link">Self-Hosting</a>
+      <a href="nginx.html" class="sidebar-link">Nginx</a>
+      <a href="admin.html" class="sidebar-link active">Admin Panel</a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">Docs</a><span>/</span><span>Admin Panel</span>
+      </div>
+
+      <h1>Admin Panel</h1>
+      <p class="lead" lang="de">Das Admin Panel ermöglicht die Verwaltung von Tenants, Gutscheinen und Systemdiagnose.</p>
+      <p class="lead" lang="en">The Admin Panel allows managing tenants, coupons, and system diagnostics.</p>
+
+      <!-- 1. Zugang / Access -->
+      <h2><span lang="de">Zugang</span><span lang="en">Access</span></h2>
+      <p lang="de">Das Admin Panel ist unter <code>/admin</code> erreichbar.</p>
+      <p lang="en">The Admin Panel is available at <code>/admin</code>.</p>
+      <ul lang="de">
+        <li>Die Umgebungsvariable <code>ADMIN_TOKEN</code> muss gesetzt sein.</li>
+        <li>Melde dich mit dem Token-Wert an.</li>
+        <li>Die Authentifizierung ist sitzungsbasiert (Cookie) &ndash; beim Schlie&szlig;en des Browsers wirst du automatisch abgemeldet.</li>
+      </ul>
+      <ul lang="en">
+        <li>The <code>ADMIN_TOKEN</code> environment variable must be set.</li>
+        <li>Log in with the token value.</li>
+        <li>Authentication is session-based (cookie) &ndash; you are automatically logged out when the browser is closed.</li>
+      </ul>
+      <p lang="de">Beispiel zum Setzen der Umgebungsvariable:</p>
+      <p lang="en">Example of setting the environment variable:</p>
+      <pre>ADMIN_TOKEN=dein-geheimer-token</pre>
+
+      <!-- 2. Dashboard-Übersicht / Dashboard Overview -->
+      <h2><span lang="de">Dashboard-&Uuml;bersicht</span><span lang="en">Dashboard Overview</span></h2>
+      <p lang="de">Nach dem Login siehst du Statistik-Karten mit einer &Uuml;bersicht aller Tenants:</p>
+      <p lang="en">After logging in, you see stats cards with an overview of all tenants:</p>
+      <ul lang="de">
+        <li><strong>Gesamt</strong> &ndash; Anzahl aller registrierten Tenants</li>
+        <li><strong>Trial</strong> &ndash; Tenants im Testzeitraum</li>
+        <li><strong>Active</strong> &ndash; Aktive Tenants</li>
+        <li><strong>Expired</strong> &ndash; Abgelaufene Tenants</li>
+        <li><strong>Cancelled</strong> &ndash; Gek&uuml;ndigte Tenants</li>
+      </ul>
+      <ul lang="en">
+        <li><strong>Total</strong> &ndash; Number of all registered tenants</li>
+        <li><strong>Trial</strong> &ndash; Tenants in trial period</li>
+        <li><strong>Active</strong> &ndash; Active tenants</li>
+        <li><strong>Expired</strong> &ndash; Expired tenants</li>
+        <li><strong>Cancelled</strong> &ndash; Cancelled tenants</li>
+      </ul>
+      <p lang="de">So erh&auml;ltst du einen schnellen &Uuml;berblick &uuml;ber den Systemzustand.</p>
+      <p lang="en">This gives you a quick view of the overall system health.</p>
+
+      <!-- 3. Tenant-Verwaltung / Tenant Management -->
+      <h2><span lang="de">Tenant-Verwaltung</span><span lang="en">Tenant Management</span></h2>
+      <p lang="de">In der Tenant-&Uuml;bersicht siehst du alle registrierten Tenants mit Status und Erstellungsdatum. Folgende Aktionen stehen zur Verf&uuml;gung:</p>
+      <p lang="en">In the tenant overview you can see all registered tenants with their status and creation date. The following actions are available:</p>
+      <ul lang="de">
+        <li><strong>Status &auml;ndern</strong> &ndash; Setze den Tenant-Status auf Trial, Active, Expired oder Cancelled.</li>
+        <li><strong>Trial verl&auml;ngern</strong> &ndash; Verl&auml;ngere den Testzeitraum um X Tage.</li>
+        <li><strong>Tenant l&ouml;schen</strong> &ndash; Entfernt den Registry-Eintrag und das Datenverzeichnis des Tenants.</li>
+        <li><strong>Tenant-Info anzeigen</strong> &ndash; E-Mail (falls gesetzt), 2FA-Status, Passwort-Status.</li>
+      </ul>
+      <ul lang="en">
+        <li><strong>Change status</strong> &ndash; Set the tenant status to Trial, Active, Expired, or Cancelled.</li>
+        <li><strong>Extend trial</strong> &ndash; Extend the trial period by X days.</li>
+        <li><strong>Delete tenant</strong> &ndash; Removes the registry entry and the tenant's data directory.</li>
+        <li><strong>View tenant info</strong> &ndash; Email (if set), 2FA status, password status.</li>
+      </ul>
+
+      <div class="callout callout-warn" lang="de">
+        <div class="callout-title">Hinweis</div>
+        <p>Das L&ouml;schen eines Tenants ist unwiderruflich. Alle Daten des Tenants werden dauerhaft entfernt.</p>
+      </div>
+      <div class="callout callout-warn" lang="en">
+        <div class="callout-title">Warning</div>
+        <p>Deleting a tenant is irreversible. All tenant data will be permanently removed.</p>
+      </div>
+
+      <!-- 4. Passwort zurücksetzen / Password Reset -->
+      <h2><span lang="de">Passwort zur&uuml;cksetzen</span><span lang="en">Password Reset</span></h2>
+      <ol class="steps" lang="de">
+        <li>Klicke auf <strong>&bdquo;Reset PW&ldquo;</strong> neben dem gew&uuml;nschten Tenant.</li>
+        <li>Ein tempor&auml;res Passwort wird generiert und angezeigt.</li>
+        <li>Teile das tempor&auml;re Passwort dem Benutzer auf sicherem Weg mit.</li>
+        <li>Der Benutzer sollte sein Passwort nach dem ersten Login &auml;ndern.</li>
+      </ol>
+      <ol class="steps" lang="en">
+        <li>Click <strong>"Reset PW"</strong> next to the desired tenant.</li>
+        <li>A temporary password is generated and displayed.</li>
+        <li>Communicate the temporary password to the user securely.</li>
+        <li>The user should change their password after the first login.</li>
+      </ol>
+
+      <!-- 5. 2FA zurücksetzen / 2FA Reset -->
+      <h2><span lang="de">2FA zur&uuml;cksetzen</span><span lang="en">2FA Reset</span></h2>
+      <ol class="steps" lang="de">
+        <li>Klicke auf <strong>&bdquo;Reset 2FA&ldquo;</strong> neben dem gew&uuml;nschten Tenant.</li>
+        <li>Alle TOTP-Einstellungen werden aus der Datenbank des Tenants entfernt.</li>
+        <li>Der Benutzer kann 2FA anschlie&szlig;end unter Einstellungen erneut einrichten.</li>
+      </ol>
+      <ol class="steps" lang="en">
+        <li>Click <strong>"Reset 2FA"</strong> next to the desired tenant.</li>
+        <li>All TOTP settings are removed from the tenant's database.</li>
+        <li>The user can set up 2FA again from Settings.</li>
+      </ol>
+
+      <!-- 6. Gutscheine / Coupons -->
+      <h2><span lang="de">Gutscheine</span><span lang="en">Coupons</span></h2>
+      <p lang="de"><strong>Nur im Cloudhost-Modus verf&uuml;gbar.</strong></p>
+      <p lang="en"><strong>Only available in cloudhost mode.</strong></p>
+      <p lang="de">Gutscheine k&ouml;nnen mit folgenden Typen erstellt werden:</p>
+      <p lang="en">Coupons can be created with the following types:</p>
+      <div lang="de">
+        <table>
+          <thead>
+            <tr><th>Typ</th><th>Beschreibung</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>trial_extension</strong></td><td>Verl&auml;ngert den Testzeitraum eines Tenants.</td></tr>
+            <tr><td><strong>free_access</strong></td><td>Gew&auml;hrt kostenlosen Zugang.</td></tr>
+            <tr><td><strong>discount</strong></td><td>Gew&auml;hrt einen Rabatt.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div lang="en">
+        <table>
+          <thead>
+            <tr><th>Type</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>trial_extension</strong></td><td>Extends the trial period of a tenant.</td></tr>
+            <tr><td><strong>free_access</strong></td><td>Grants free access.</td></tr>
+            <tr><td><strong>discount</strong></td><td>Grants a discount.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p lang="de">Weitere Optionen beim Erstellen eines Gutscheins:</p>
+      <p lang="en">Additional options when creating a coupon:</p>
+      <ul lang="de">
+        <li><strong>Maximale Nutzungen</strong> &ndash; Wie oft der Gutschein einl&ouml;sbar ist.</li>
+        <li><strong>Ablaufdatum</strong> &ndash; Bis wann der Gutschein g&uuml;ltig ist.</li>
+        <li><strong>Code</strong> &ndash; Automatisch generiert oder benutzerdefiniert.</li>
+      </ul>
+      <ul lang="en">
+        <li><strong>Max uses</strong> &ndash; How many times the coupon can be redeemed.</li>
+        <li><strong>Expiration date</strong> &ndash; Until when the coupon is valid.</li>
+        <li><strong>Code</strong> &ndash; Auto-generated or custom.</li>
+      </ul>
+      <p lang="de">Gutscheine k&ouml;nnen jederzeit gel&ouml;scht werden.</p>
+      <p lang="en">Coupons can be deleted at any time.</p>
+
+      <!-- 7. Systemdiagnose / System Diagnostics -->
+      <h2><span lang="de">Systemdiagnose</span><span lang="en">System Diagnostics</span></h2>
+      <p lang="de">Klicke auf <strong>&bdquo;Run Diagnose&ldquo;</strong>, um folgende Pr&uuml;fungen auszuf&uuml;hren:</p>
+      <p lang="en">Click <strong>"Run Diagnose"</strong> to perform the following checks:</p>
+      <ul lang="de">
+        <li>Datenverzeichnis existiert und ist beschreibbar</li>
+        <li>Registry-Datenbank-Status</li>
+        <li>Pro Tenant: Verzeichnis existiert, Datenbankdatei existiert</li>
+      </ul>
+      <ul lang="en">
+        <li>Data directory exists and is writable</li>
+        <li>Registry database status</li>
+        <li>Per tenant: directory exists, database file exists</li>
+      </ul>
+      <p lang="de">Die Funktion <strong>&bdquo;Cleanup&ldquo;</strong> entfernt verwaiste Registry-Eintr&auml;ge &ndash; also Eintr&auml;ge, zu denen kein passendes Verzeichnis mehr existiert.</p>
+      <p lang="en">The <strong>"Cleanup"</strong> function removes orphaned registry entries &ndash; entries without a matching directory.</p>
+
+      <div class="callout callout-warn" lang="de">
+        <div class="callout-title">Hinweis</div>
+        <p>Cleanup entfernt nur Registry-Eintr&auml;ge. Vorhandene Datenverzeichnisse ohne Registry-Eintrag werden nicht angetastet.</p>
+      </div>
+      <div class="callout callout-warn" lang="en">
+        <div class="callout-title">Note</div>
+        <p>Cleanup only removes registry entries. Existing data directories without a registry entry are not affected.</p>
+      </div>
+
+      <div class="page-nav">
+        <a href="nginx.html">
+          <div class="page-nav-label"><span lang="de">&larr; Vorherige Seite</span><span lang="en">&larr; Previous Page</span></div>
+          <div class="page-nav-title">Nginx</div>
+        </a>
+        <span></span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2026 Financer</span>
+    <div class="footer-links">
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Feature anfragen</span><span lang="en">Request Feature</span></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+    document.querySelectorAll('.sidebar-link').forEach(function(link) {
+      link.addEventListener('click', function() { if (window.innerWidth <= 768) toggleSidebar(); });
+    });
+    function toggleLang() {
+      var lang = document.documentElement.lang === 'de' ? 'en' : 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+      localStorage.setItem('lang', lang);
+    }
+    (function() {
+      var lang = localStorage.getItem('lang') || 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+    })();
+  </script>
+</body>
+</html>

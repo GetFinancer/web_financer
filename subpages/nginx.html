@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-de="Nginx Konfiguration – Financer Docs" data-en="Nginx Configuration – Financer Docs">Nginx Konfiguration – Financer Docs</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menü">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="../index.html" class="header-logo">
+        <img src="../assets/logo.png" alt="Financer">
+        <span>Docs</span>
+      </a>
+    </div>
+    <div class="header-links">
+      <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+      <a href="https://financer.getbugio.com" class="btn-bug" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Erste Schritte</span><span lang="en">Getting Started</span></div>
+      <a href="../index.html" class="sidebar-link"><span lang="de">Übersicht</span><span lang="en">Overview</span></a>
+      <a href="setup.html" class="sidebar-link"><span lang="de">Ersteinrichtung</span><span lang="en">Initial Setup</span></a>
+      <a href="login.html" class="sidebar-link"><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Bedienung</span><span lang="en">Usage</span></div>
+      <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+      <a href="transactions.html" class="sidebar-link"><span lang="de">Transaktionen</span><span lang="en">Transactions</span></a>
+      <a href="recurring.html" class="sidebar-link"><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></a>
+      <a href="accounts.html" class="sidebar-link"><span lang="de">Konten</span><span lang="en">Accounts</span></a>
+      <a href="categories.html" class="sidebar-link"><span lang="de">Kategorien</span><span lang="en">Categories</span></a>
+      <a href="analytics.html" class="sidebar-link"><span lang="de">Auswertungen</span><span lang="en">Analytics</span></a>
+      <a href="creditcards.html" class="sidebar-link"><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Sonstiges</span><span lang="en">Other</span></div>
+      <a href="settings.html" class="sidebar-link"><span lang="de">Einstellungen</span><span lang="en">Settings</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Hosting &amp; Admin</span><span lang="en">Hosting &amp; Admin</span></div>
+      <a href="selfhosting.html" class="sidebar-link">Self-Hosting</a>
+      <a href="nginx.html" class="sidebar-link active">Nginx</a>
+      <a href="admin.html" class="sidebar-link">Admin Panel</a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">Docs</a><span>/</span><span>Nginx</span>
+      </div>
+
+      <h1><span lang="de">Nginx Konfiguration</span><span lang="en">Nginx Configuration</span></h1>
+      <p class="lead" lang="de">So richtest du Nginx als Reverse Proxy für Financer ein.</p>
+      <p class="lead" lang="en">How to set up Nginx as a reverse proxy for Financer.</p>
+
+      <h2><span lang="de">Einfache Konfiguration</span><span lang="en">Basic Configuration</span></h2>
+      <p lang="de">Für eine einfache Self-Hosted-Installation (Single-Tenant) genügt folgende Nginx-Konfiguration:</p>
+      <p lang="en">For a simple self-hosted installation (single-tenant), the following Nginx configuration is sufficient:</p>
+      <pre><code>server {
+    listen 80;
+    server_name financer.example.com;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_cache_bypass $http_upgrade;
+    }
+}</code></pre>
+
+      <h2><span lang="de">SSL mit Certbot</span><span lang="en">SSL with Certbot</span></h2>
+      <p lang="de">Um HTTPS zu aktivieren, installiere Certbot und fordere ein Zertifikat an:</p>
+      <p lang="en">To enable HTTPS, install Certbot and request a certificate:</p>
+
+      <p lang="de"><strong>1. Certbot installieren:</strong></p>
+      <p lang="en"><strong>1. Install Certbot:</strong></p>
+      <pre><code>sudo apt install certbot python3-certbot-nginx</code></pre>
+
+      <p lang="de"><strong>2. Zertifikat anfordern:</strong></p>
+      <p lang="en"><strong>2. Get certificate:</strong></p>
+      <pre><code>sudo certbot --nginx -d financer.example.com</code></pre>
+
+      <p lang="de"><strong>3. Automatische Erneuerung testen:</strong></p>
+      <p lang="en"><strong>3. Test auto-renewal:</strong></p>
+      <pre><code>sudo certbot renew --dry-run</code></pre>
+
+      <h2><span lang="de">Multi-Tenant (Cloudhost)</span><span lang="en">Multi-Tenant (Cloudhost)</span></h2>
+      <p lang="de">Für ein Multi-Tenant-Setup mit Wildcard-Subdomains verwendest du folgende Konfiguration:</p>
+      <p lang="en">For a multi-tenant setup with wildcard subdomains, use the following configuration:</p>
+      <pre><code>server {
+    listen 443 ssl;
+    server_name *.getfinancer.com getfinancer.com;
+
+    ssl_certificate /etc/letsencrypt/live/getfinancer.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/getfinancer.com/privkey.pem;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}</code></pre>
+
+      <div class="callout callout-warn" lang="de">
+        <div class="callout-title">Hinweis</div>
+        <p>Wildcard-SSL erfordert DNS-Validierung. Verwende folgenden Befehl:</p>
+        <pre><code>sudo certbot certonly --manual --preferred-challenges dns -d "*.getfinancer.com" -d "getfinancer.com"</code></pre>
+      </div>
+      <div class="callout callout-warn" lang="en">
+        <div class="callout-title">Note</div>
+        <p>Wildcard SSL requires DNS validation. Use the following command:</p>
+        <pre><code>sudo certbot certonly --manual --preferred-challenges dns -d "*.getfinancer.com" -d "getfinancer.com"</code></pre>
+      </div>
+
+      <h2><span lang="de">Tipps</span><span lang="en">Tips</span></h2>
+      <ul lang="de">
+        <li>Setze <code>client_max_body_size</code> in deiner Nginx-Konfiguration, falls du gr&ouml;&szlig;ere Uploads ben&ouml;tigst (z.&nbsp;B. <code>client_max_body_size 10M;</code>).</li>
+        <li>Aktiviere <strong>gzip-Komprimierung</strong> f&uuml;r bessere Performance.</li>
+        <li>Lade Nginx nach &Auml;nderungen neu:
+          <pre><code>sudo nginx -t &amp;&amp; sudo systemctl reload nginx</code></pre>
+        </li>
+      </ul>
+      <ul lang="en">
+        <li>Set <code>client_max_body_size</code> in your Nginx configuration if you need larger uploads (e.g. <code>client_max_body_size 10M;</code>).</li>
+        <li>Enable <strong>gzip compression</strong> for better performance.</li>
+        <li>Reload Nginx after changes:
+          <pre><code>sudo nginx -t &amp;&amp; sudo systemctl reload nginx</code></pre>
+        </li>
+      </ul>
+
+      <div class="page-nav">
+        <a href="selfhosting.html">
+          <div class="page-nav-label"><span lang="de">&larr; Vorherige Seite</span><span lang="en">&larr; Previous Page</span></div>
+          <div class="page-nav-title">Self-Hosting</div>
+        </a>
+        <a href="admin.html" class="page-nav-next">
+          <div class="page-nav-label"><span lang="de">Nächste Seite &rarr;</span><span lang="en">Next Page &rarr;</span></div>
+          <div class="page-nav-title">Admin Panel</div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2026 Financer</span>
+    <div class="footer-links">
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Feature anfragen</span><span lang="en">Request Feature</span></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+    document.querySelectorAll('.sidebar-link').forEach(function(link) {
+      link.addEventListener('click', function() { if (window.innerWidth <= 768) toggleSidebar(); });
+    });
+    function toggleLang() {
+      var lang = document.documentElement.lang === 'de' ? 'en' : 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+      localStorage.setItem('lang', lang);
+    }
+    (function() {
+      var lang = localStorage.getItem('lang') || 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+    })();
+  </script>
+</body>
+</html>
