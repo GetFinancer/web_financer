@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-de="Self-Hosting – Financer Docs" data-en="Self-Hosting – Financer Docs">Self-Hosting – Financer Docs</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menü">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="../index.html" class="header-logo">
+        <img src="../assets/logo.png" alt="Financer">
+        <span>Docs</span>
+      </a>
+    </div>
+    <div class="header-links">
+      <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+      <a href="https://financer.getbugio.com" class="btn-bug" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Erste Schritte</span><span lang="en">Getting Started</span></div>
+      <a href="../index.html" class="sidebar-link"><span lang="de">Übersicht</span><span lang="en">Overview</span></a>
+      <a href="setup.html" class="sidebar-link"><span lang="de">Ersteinrichtung</span><span lang="en">Initial Setup</span></a>
+      <a href="login.html" class="sidebar-link"><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Bedienung</span><span lang="en">Usage</span></div>
+      <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+      <a href="transactions.html" class="sidebar-link"><span lang="de">Transaktionen</span><span lang="en">Transactions</span></a>
+      <a href="recurring.html" class="sidebar-link"><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></a>
+      <a href="accounts.html" class="sidebar-link"><span lang="de">Konten</span><span lang="en">Accounts</span></a>
+      <a href="categories.html" class="sidebar-link"><span lang="de">Kategorien</span><span lang="en">Categories</span></a>
+      <a href="analytics.html" class="sidebar-link"><span lang="de">Auswertungen</span><span lang="en">Analytics</span></a>
+      <a href="creditcards.html" class="sidebar-link"><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Sonstiges</span><span lang="en">Other</span></div>
+      <a href="settings.html" class="sidebar-link"><span lang="de">Einstellungen</span><span lang="en">Settings</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Hosting &amp; Admin</span><span lang="en">Hosting &amp; Admin</span></div>
+      <a href="selfhosting.html" class="sidebar-link active">Self-Hosting</a>
+      <a href="nginx.html" class="sidebar-link">Nginx</a>
+      <a href="admin.html" class="sidebar-link">Admin Panel</a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">Docs</a><span>/</span><span>Self-Hosting</span>
+      </div>
+
+      <h1>Self-Hosting</h1>
+      <p class="lead" lang="de">So betreibst du Financer auf deinem eigenen Server mit Docker.</p>
+      <p class="lead" lang="en">How to run Financer on your own server using Docker.</p>
+
+      <h2><span lang="de">Voraussetzungen</span><span lang="en">Prerequisites</span></h2>
+      <ul>
+        <li><span lang="de">Docker und Docker Compose installiert</span><span lang="en">Docker and Docker Compose installed</span></li>
+        <li><span lang="de">Linux-Server (Ubuntu, Debian o.ä.)</span><span lang="en">A Linux server (Ubuntu, Debian, etc.)</span></li>
+        <li><span lang="de">Optional: eine Domain und Nginx als Reverse Proxy</span><span lang="en">Optional: a domain and Nginx as a reverse proxy</span></li>
+      </ul>
+
+      <h2>Quick Start</h2>
+      <p lang="de">Repo klonen, <code>.env</code>-Datei anlegen und starten:</p>
+      <p lang="en">Clone the repo, create a <code>.env</code> file, and start:</p>
+      <pre>git clone https://github.com/GetFinancer/financer.git
+cd financer
+
+# .env anlegen / create .env
+echo "SESSION_SECRET=$(openssl rand -base64 32)" >> .env
+echo "ADMIN_TOKEN=$(openssl rand -base64 32)" >> .env
+
+# Starten / Start
+docker compose -f docker-compose.selfhosted.yml up -d</pre>
+      <p lang="de">Die App ist danach unter <code>http://localhost:3000</code> erreichbar.</p>
+      <p lang="en">The app is then available at <code>http://localhost:3000</code>.</p>
+
+      <h2><span lang="de">Umgebungsvariablen</span><span lang="en">Environment Variables</span></h2>
+      <p lang="de">Alle Variablen werden in der <code>.env</code>-Datei im Projektverzeichnis gesetzt.</p>
+      <p lang="en">All variables are set in the <code>.env</code> file in the project directory.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Variable</th>
+            <th><span lang="de">Pflicht</span><span lang="en">Required</span></th>
+            <th>Default</th>
+            <th><span lang="de">Beschreibung</span><span lang="en">Description</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>SESSION_SECRET</code></td>
+            <td><span lang="de">Ja</span><span lang="en">Yes</span></td>
+            <td>—</td>
+            <td><span lang="de">Secret für Session-Verschlüsselung. Generieren: <code>openssl rand -base64 32</code></span><span lang="en">Secret for session encryption. Generate: <code>openssl rand -base64 32</code></span></td>
+          </tr>
+          <tr>
+            <td><code>ADMIN_TOKEN</code></td>
+            <td><span lang="de">Nein</span><span lang="en">No</span></td>
+            <td>—</td>
+            <td><span lang="de">Token für den Zugang zum Admin Panel unter <code>/admin</code></span><span lang="en">Token for access to the Admin Panel at <code>/admin</code></span></td>
+          </tr>
+          <tr>
+            <td><code>DEPLOYMENT_MODE</code></td>
+            <td><span lang="de">Nein</span><span lang="en">No</span></td>
+            <td><code>selfhosted</code></td>
+            <td><span lang="de"><code>selfhosted</code> (Single-Tenant) oder <code>cloudhost</code> (Multi-Tenant)</span><span lang="en"><code>selfhosted</code> (single-tenant) or <code>cloudhost</code> (multi-tenant)</span></td>
+          </tr>
+          <tr>
+            <td><code>DEFAULT_TENANT</code></td>
+            <td><span lang="de">Nein</span><span lang="en">No</span></td>
+            <td><code>default</code></td>
+            <td><span lang="de">Tenant-Name im selfhosted-Modus</span><span lang="en">Tenant name in selfhosted mode</span></td>
+          </tr>
+          <tr>
+            <td><code>DATA_DIR</code></td>
+            <td><span lang="de">Nein</span><span lang="en">No</span></td>
+            <td><code>/app/data</code></td>
+            <td><span lang="de">Verzeichnis für SQLite-Datenbanken (im Container)</span><span lang="en">Directory for SQLite databases (inside container)</span></td>
+          </tr>
+          <tr>
+            <td><code>WEB_PORT</code></td>
+            <td><span lang="de">Nein</span><span lang="en">No</span></td>
+            <td><code>3000</code></td>
+            <td><span lang="de">Port für das Web-Frontend</span><span lang="en">Port for the web frontend</span></td>
+          </tr>
+          <tr>
+            <td><code>API_PORT</code></td>
+            <td><span lang="de">Nein</span><span lang="en">No</span></td>
+            <td><code>4000</code></td>
+            <td><span lang="de">Port für die API</span><span lang="en">Port for the API</span></td>
+          </tr>
+          <tr>
+            <td><code>BASE_DOMAIN</code></td>
+            <td><span lang="de">Nein</span><span lang="en">No</span></td>
+            <td>—</td>
+            <td><span lang="de">Basis-Domain für Subdomain-Routing im cloudhost-Modus</span><span lang="en">Base domain for subdomain routing in cloudhost mode</span></td>
+          </tr>
+          <tr>
+            <td><code>SMTP_HOST</code></td>
+            <td><span lang="de">Nein</span><span lang="en">No</span></td>
+            <td>—</td>
+            <td><span lang="de">SMTP-Server für Passwort-Reset-E-Mails (z.B. <code>smtp.gmail.com</code>)</span><span lang="en">SMTP server for password reset emails (e.g. <code>smtp.gmail.com</code>)</span></td>
+          </tr>
+          <tr>
+            <td><code>SMTP_PORT</code></td>
+            <td><span lang="de">Nein</span><span lang="en">No</span></td>
+            <td><code>587</code></td>
+            <td><span lang="de">SMTP-Port (587 für STARTTLS, 465 für SSL)</span><span lang="en">SMTP port (587 for STARTTLS, 465 for SSL)</span></td>
+          </tr>
+          <tr>
+            <td><code>SMTP_USER</code></td>
+            <td><span lang="de">Nein</span><span lang="en">No</span></td>
+            <td>—</td>
+            <td><span lang="de">SMTP-Benutzername / E-Mail-Adresse</span><span lang="en">SMTP username / email address</span></td>
+          </tr>
+          <tr>
+            <td><code>SMTP_PASS</code></td>
+            <td><span lang="de">Nein</span><span lang="en">No</span></td>
+            <td>—</td>
+            <td><span lang="de">SMTP-Passwort oder App-Passwort</span><span lang="en">SMTP password or app password</span></td>
+          </tr>
+          <tr>
+            <td><code>SMTP_FROM</code></td>
+            <td><span lang="de">Nein</span><span lang="en">No</span></td>
+            <td><span lang="de">= SMTP_USER</span><span lang="en">= SMTP_USER</span></td>
+            <td><span lang="de">Absender-Adresse für ausgehende E-Mails</span><span lang="en">Sender address for outgoing emails</span></td>
+          </tr>
+          <tr>
+            <td><code>APP_URL</code></td>
+            <td><span lang="de">Nein</span><span lang="en">No</span></td>
+            <td>—</td>
+            <td><span lang="de">URL der App — wird in Passwort-Reset-E-Mails verlinkt</span><span lang="en">App URL — linked in password reset emails</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p lang="de"><strong>Hinweis:</strong> Ohne SMTP-Konfiguration ist der Passwort-Reset durch den Administrator nicht verfügbar.</p>
+      <p lang="en"><strong>Note:</strong> Without SMTP configuration, password reset by the administrator is not available.</p>
+
+      <h2><span lang="de">Datenverzeichnis</span><span lang="en">Data Directory</span></h2>
+      <p lang="de">Alle Daten liegen im <code>./data</code>-Verzeichnis auf dem Host:</p>
+      <p lang="en">All data is stored in the <code>./data</code> directory on the host:</p>
+      <pre>data/
+├── _registry/
+│   └── registry.db       # Tenant-Registrierung / tenant registry
+└── {tenant-name}/
+    └── financer.db       # Tenant-Datenbank / tenant database</pre>
+      <p lang="de"><strong>Berechtigungen:</strong> Das Verzeichnis muss vom Container-User (UID 1001) beschreibbar sein:</p>
+      <p lang="en"><strong>Permissions:</strong> The directory must be writable by the container user (UID 1001):</p>
+      <pre>chown -R 1001:65533 ./data</pre>
+
+      <h2>Backup</h2>
+      <p lang="de">Container stoppen, Datenverzeichnis kopieren, neu starten:</p>
+      <p lang="en">Stop containers, copy the data directory, restart:</p>
+      <pre>docker compose down
+cp -r ./data ./data_backup_$(date +%Y%m%d)
+docker compose -f docker-compose.selfhosted.yml up -d</pre>
+      <p lang="de">Ein Backup während des Betriebs ist ebenfalls möglich — SQLite-Dateien können sicher kopiert werden, solange die Datei nicht gerade gespeichert wird.</p>
+      <p lang="en">Backup while running is also possible — SQLite files can be safely copied as long as they are not actively being written.</p>
+
+      <h2>Update</h2>
+      <pre>git pull
+docker compose -f docker-compose.selfhosted.yml up -d --build</pre>
+
+      <div class="page-nav">
+        <a href="settings.html" class="page-nav-prev">
+          <div class="page-nav-label"><span lang="de">&larr; Vorherige Seite</span><span lang="en">&larr; Previous Page</span></div>
+          <div class="page-nav-title"><span lang="de">Einstellungen</span><span lang="en">Settings</span></div>
+        </a>
+        <a href="nginx.html" class="page-nav-next">
+          <div class="page-nav-label"><span lang="de">Nächste Seite &rarr;</span><span lang="en">Next Page &rarr;</span></div>
+          <div class="page-nav-title">Nginx</div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2026 Financer</span>
+    <div class="footer-links">
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Feature anfragen</span><span lang="en">Request Feature</span></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+    document.querySelectorAll('.sidebar-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) toggleSidebar();
+      });
+    });
+    function toggleLang() {
+      var lang = document.documentElement.lang === 'de' ? 'en' : 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+      localStorage.setItem('lang', lang);
+    }
+    (function() {
+      var lang = localStorage.getItem('lang') || 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+    })();
+  </script>
+</body>
+</html>
