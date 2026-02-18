@@ -132,18 +132,26 @@
 
       <!-- 4. Passwort zurücksetzen / Password Reset -->
       <h2><span lang="de">Passwort zur&uuml;cksetzen</span><span lang="en">Password Reset</span></h2>
+      <p lang="de"><strong>Voraussetzungen:</strong> Der Benutzer muss eine E-Mail-Adresse in seinen Einstellungen hinterlegt haben, und SMTP muss konfiguriert sein.</p>
+      <p lang="en"><strong>Requirements:</strong> The user must have saved an email address in their settings, and SMTP must be configured.</p>
       <ol class="steps" lang="de">
         <li>Klicke auf <strong>&bdquo;Reset PW&ldquo;</strong> neben dem gew&uuml;nschten Tenant.</li>
-        <li>Ein tempor&auml;res Passwort wird generiert und angezeigt.</li>
-        <li>Teile das tempor&auml;re Passwort dem Benutzer auf sicherem Weg mit.</li>
-        <li>Der Benutzer sollte sein Passwort nach dem ersten Login &auml;ndern.</li>
+        <li>Ein tempor&auml;res Passwort wird generiert und automatisch per E-Mail an den Benutzer gesendet.</li>
+        <li>Der Benutzer loggt sich mit dem tempor&auml;ren Passwort ein und &auml;ndert es sofort unter Einstellungen.</li>
       </ol>
       <ol class="steps" lang="en">
         <li>Click <strong>"Reset PW"</strong> next to the desired tenant.</li>
-        <li>A temporary password is generated and displayed.</li>
-        <li>Communicate the temporary password to the user securely.</li>
-        <li>The user should change their password after the first login.</li>
+        <li>A temporary password is generated and automatically sent to the user via email.</li>
+        <li>The user logs in with the temporary password and changes it immediately in Settings.</li>
       </ol>
+      <div class="callout callout-info" lang="de">
+        <div class="callout-title">Hinweis</div>
+        <p>Hat der Benutzer keine E-Mail hinterlegt oder ist SMTP nicht konfiguriert, ist der Passwort-Reset nicht m&ouml;glich.</p>
+      </div>
+      <div class="callout callout-info" lang="en">
+        <div class="callout-title">Note</div>
+        <p>If the user has no email on file or SMTP is not configured, password reset is not possible.</p>
+      </div>
 
       <!-- 5. 2FA zurücksetzen / 2FA Reset -->
       <h2><span lang="de">2FA zur&uuml;cksetzen</span><span lang="en">2FA Reset</span></h2>
@@ -244,6 +252,7 @@
     <div class="footer-links">
       <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
       <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Feature anfragen</span><span lang="en">Request Feature</span></a>
+      <a href="mailto:admin@getfinancer.com"><span lang="de">Support kontaktieren</span><span lang="en">Contact Support</span></a>
     </div>
   </footer>
 
