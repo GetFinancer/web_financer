@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financer Cloud — Upgrade</title>
+  <meta name="description" content="Sichere dir deinen Cloud-Zugang. 14 Tage kostenlos testen, danach 4,99€/Monat. Jederzeit kündbar.">
+  <meta name="theme-color" content="#0B0B0D">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared-vars.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Upgrade-specific styles */
+    .upgrade-hero {
+      padding: 8rem 0 4rem;
+      text-align: center;
+    }
+
+    .upgrade-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    @media (min-width: 768px) {
+      .upgrade-hero h1 { font-size: 3.5rem; }
+    }
+
+    @media (min-width: 1024px) {
+      .upgrade-hero h1 { font-size: 4rem; }
+    }
+
+    .upgrade-features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .upgrade-features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .upgrade-features-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .upgrade-feature-card {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .upgrade-feature-icon {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, hsl(var(--primary) / 0.15) 0%, hsl(var(--secondary) / 0.15) 100%);
+      color: hsl(var(--primary));
+      flex-shrink: 0;
+    }
+
+    .upgrade-feature-card:nth-child(2) .upgrade-feature-icon { color: hsl(var(--secondary)); }
+    .upgrade-feature-card:nth-child(3) .upgrade-feature-icon { color: hsl(var(--success)); }
+    .upgrade-feature-card:nth-child(4) .upgrade-feature-icon { color: hsl(185 94% 47%); }
+    .upgrade-feature-card:nth-child(5) .upgrade-feature-icon { color: hsl(38 92% 50%); }
+    .upgrade-feature-card:nth-child(6) .upgrade-feature-icon { color: hsl(var(--secondary)); }
+
+    .upgrade-feature-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: hsl(var(--foreground));
+    }
+
+    .upgrade-feature-card p {
+      font-size: 0.875rem;
+      color: hsl(var(--foreground-secondary));
+      line-height: 1.5;
+    }
+
+    /* Pricing single card */
+    .upgrade-pricing-section {
+      padding: 4rem 0;
+    }
+
+    .upgrade-pricing-card {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .upgrade-pricing-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, hsl(var(--primary) / 0.08) 0%, hsl(var(--secondary) / 0.08) 100%);
+      pointer-events: none;
+    }
+
+    .upgrade-price-trial {
+      font-size: 1rem;
+      font-weight: 600;
+      color: hsl(var(--primary));
+      margin-bottom: 0.5rem;
+    }
+
+    .upgrade-price-then {
+      font-size: 0.875rem;
+      color: hsl(var(--foreground-secondary));
+      margin-bottom: 0.5rem;
+    }
+
+    .upgrade-price-main {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .upgrade-price-currency {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: hsl(var(--foreground));
+    }
+
+    .upgrade-price-amount {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: hsl(var(--foreground));
+      line-height: 1;
+    }
+
+    .upgrade-price-period {
+      font-size: 1rem;
+      color: hsl(var(--foreground-secondary));
+    }
+
+    .upgrade-price-note {
+      font-size: 0.8125rem;
+      color: hsl(var(--foreground-disabled));
+      margin-bottom: 2rem;
+    }
+
+    .upgrade-price-features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .upgrade-price-features li {
+      padding: 0.5rem 0;
+      font-size: 0.875rem;
+      color: hsl(var(--foreground-secondary));
+      border-bottom: 1px solid hsl(var(--border));
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .upgrade-price-features li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background: linear-gradient(135deg, hsl(var(--primary) / 0.2), hsl(var(--secondary) / 0.2));
+      border-radius: 50%;
+    }
+
+    .upgrade-price-features li::after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      width: 5px;
+      height: 8px;
+      border-bottom: 2px solid hsl(var(--primary));
+      border-right: 2px solid hsl(var(--primary));
+    }
+
+    .upgrade-price-cta {
+      width: 100%;
+      justify-content: center;
+      font-size: 1rem;
+      padding: 0.875rem 2rem;
+    }
+  </style>
+  <!-- Prevent theme flash -->
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='light'||((!t)&&window.matchMedia('(prefers-color-scheme: light)').matches)){document.documentElement.classList.add('light')}})();
+  </script>
+</head>
+<body>
+
+  <!-- Animated background -->
+  <div class="bg-gradient" aria-hidden="true"></div>
+
+  <div class="page-wrapper">
+
+    <!-- ===== Navigation ===== -->
+    <nav class="nav glass-nav">
+      <div class="container nav-inner">
+        <a href="/" class="nav-logo" aria-label="Financer Home">
+          <img src="/logo.png" alt="Financer" height="28">
+        </a>
+
+        <div class="nav-links">
+          <a href="/#features" data-i18n="nav.features">Features</a>
+          <a href="/#demo" data-i18n="nav.demo">Demo</a>
+          <a href="/#pricing" data-i18n="nav.pricing">Preise</a>
+          <a href="/#selfhost" data-i18n="nav.selfhost">Self-Hosting</a>
+        </div>
+
+        <div class="nav-actions">
+          <button class="nav-toggle-btn lang-toggle" onclick="toggleLang()" aria-label="Toggle language">EN</button>
+          <button class="nav-toggle-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+            <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <a href="/register.html" class="btn-nav-cta nav-cta-desktop" data-i18n="nav.cta">Kostenlos testen</a>
+          <button class="menu-btn" id="menu-btn" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation">
+      <a href="/#features" data-i18n="nav.features">Features</a>
+      <a href="/#demo" data-i18n="nav.demo">Demo</a>
+      <a href="/#pricing" data-i18n="nav.pricing">Preise</a>
+      <a href="/#selfhost" data-i18n="nav.selfhost">Self-Hosting</a>
+      <a href="/impressum.html" data-i18n="nav.impressum">Impressum</a>
+      <a href="/datenschutz.html" data-i18n="nav.privacy">Datenschutz</a>
+    </div>
+
+    <!-- ===== Hero Section ===== -->
+    <section class="upgrade-hero">
+      <div class="container">
+        <div class="hero-badge" data-i18n="upgrade.badge">Cloud-Plan</div>
+
+        <h1 data-i18n="upgrade.title">Cloud-Zugang sichern</h1>
+
+        <p class="hero-subtitle" data-i18n="upgrade.subtitle">14 Tage kostenlos testen &mdash; danach &euro;4,99/Monat. Jederzeit k&uuml;ndbar, keine Kreditkarte ben&ouml;tigt.</p>
+
+        <div class="hero-actions">
+          <a href="/register.html" class="btn btn-gradient" data-i18n="upgrade.pricing.cta">Jetzt kostenlos starten</a>
+          <a href="/#demo" class="btn btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span data-i18n="hero.demo">Demo ansehen</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Features Section ===== -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label" data-i18n="upgrade.features.label">Inbegriffen</div>
+          <h2 class="section-title" data-i18n="upgrade.features.title">Was du bekommst</h2>
+          <p class="section-subtitle" data-i18n="upgrade.features.subtitle">Die Cloud-Version &uuml;bernimmt die Technik &mdash; du fokussierst dich auf deine Finanzen.</p>
+        </div>
+
+        <div class="upgrade-features-grid">
+
+          <!-- Feature 1: Ready instantly -->
+          <div class="glass-card upgrade-feature-card fade-in">
+            <div class="upgrade-feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3 data-i18n="upgrade.f1.title">Sofort startklar</h3>
+            <p data-i18n="upgrade.f1.desc">Keine Installation, kein Server. Einfach registrieren und loslegen.</p>
+          </div>
+
+          <!-- Feature 2: Automatic updates -->
+          <div class="glass-card upgrade-feature-card fade-in">
+            <div class="upgrade-feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            </div>
+            <h3 data-i18n="upgrade.f2.title">Automatische Updates</h3>
+            <p data-i18n="upgrade.f2.desc">Immer die neueste Version &mdash; ohne Aufwand deinerseits.</p>
+          </div>
+
+          <!-- Feature 3: Daily backups -->
+          <div class="glass-card upgrade-feature-card fade-in">
+            <div class="upgrade-feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 data-i18n="upgrade.f3.title">T&auml;gliche Backups</h3>
+            <p data-i18n="upgrade.f3.desc">Deine Finanzdaten sind sicher gesichert und jederzeit wiederherstellbar.</p>
+          </div>
+
+          <!-- Feature 4: EU servers -->
+          <div class="glass-card upgrade-feature-card fade-in">
+            <div class="upgrade-feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3 data-i18n="upgrade.f4.title">EU-Server (DSGVO)</h3>
+            <p data-i18n="upgrade.f4.desc">Deine Daten bleiben in Europa. Keine Weitergabe an Dritte.</p>
+          </div>
+
+          <!-- Feature 5: Personal support -->
+          <div class="glass-card upgrade-feature-card fade-in">
+            <div class="upgrade-feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 data-i18n="upgrade.f5.title">Pers&ouml;nlicher Support</h3>
+            <p data-i18n="upgrade.f5.desc">Wir sind f&uuml;r dich da, wenn du Hilfe brauchst.</p>
+          </div>
+
+          <!-- Feature 6: Open source -->
+          <div class="glass-card upgrade-feature-card fade-in">
+            <div class="upgrade-feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <h3 data-i18n="upgrade.f6.title">Open Source Kern</h3>
+            <p data-i18n="upgrade.f6.desc">Basiert auf dem MIT-lizenzierten Financer &mdash; transparent und einsehbar.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Pricing Section ===== -->
+    <section class="upgrade-pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label" data-i18n="upgrade.pricing.label">Preis</div>
+          <h2 class="section-title" data-i18n="upgrade.pricing.title">Einfach. Transparent. Fair.</h2>
+        </div>
+
+        <div class="glass-card-elevated upgrade-pricing-card fade-in">
+          <p class="upgrade-price-trial" data-i18n="upgrade.pricing.trial">14 Tage kostenlos</p>
+          <p class="upgrade-price-then" data-i18n="upgrade.pricing.then">danach</p>
+          <div class="upgrade-price-main">
+            <span class="upgrade-price-currency">&euro;</span>
+            <span class="upgrade-price-amount">4,99</span>
+            <span class="upgrade-price-period" data-i18n="upgrade.pricing.period">/ Monat</span>
+          </div>
+          <p class="upgrade-price-note" data-i18n="upgrade.pricing.note">Keine Kreditkarte n&ouml;tig. Jederzeit k&uuml;ndbar.</p>
+
+          <ul class="upgrade-price-features">
+            <li data-i18n="upgrade.f1.title">Sofort startklar</li>
+            <li data-i18n="upgrade.f2.title">Automatische Updates</li>
+            <li data-i18n="upgrade.f3.title">T&auml;gliche Backups</li>
+            <li data-i18n="upgrade.f4.title">EU-Server (DSGVO)</li>
+            <li data-i18n="upgrade.f5.title">Pers&ouml;nlicher Support</li>
+            <li data-i18n="upgrade.f6.title">Open Source Kern</li>
+          </ul>
+
+          <a href="/register.html" class="btn btn-gradient upgrade-price-cta" data-i18n="upgrade.pricing.cta">Jetzt kostenlos starten</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ Section ===== -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label" data-i18n="upgrade.faq.label">FAQ</div>
+          <h2 class="section-title" data-i18n="upgrade.faq.title">Fragen zum Cloud-Plan</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="glass-card faq-item fade-in">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              <h3 data-i18n="upgrade.faq.q1">Was passiert nach den 14 Tagen?</h3>
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="upgrade.faq.a1">Nach dem kostenlosen Testzeitraum bleibt dein Konto aktiv, solange dein Abo l&auml;uft. Du wirst vor Ablauf der Testphase per E-Mail informiert. Wenn du nicht weiter nutzen m&ouml;chtest, kannst du jederzeit k&uuml;ndigen &mdash; ohne Kosten.</p>
+            </div>
+          </div>
+
+          <div class="glass-card faq-item fade-in">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              <h3 data-i18n="upgrade.faq.q2">Kann ich jederzeit k&uuml;ndigen?</h3>
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="upgrade.faq.a2">Ja. Keine Mindestlaufzeit, keine K&uuml;ndigungsfristen. Du kannst monatlich k&uuml;ndigen &mdash; einfach per E-Mail an <a href="mailto:admin@getfinancer.com">admin@getfinancer.com</a>.</p>
+            </div>
+          </div>
+
+          <div class="glass-card faq-item fade-in">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              <h3 data-i18n="upgrade.faq.q3">Was ist der Unterschied zu Self-Hosted?</h3>
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="upgrade.faq.a3">Die Self-Hosted Version ist kostenlos und du betreibst sie selbst auf deinem eigenen Server. Die Cloud-Version hostet Financer f&uuml;r dich &mdash; mit automatischen Updates, Backups und Support. Ideal, wenn du dich nicht um Technik k&uuml;mmern m&ouml;chtest.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Final CTA ===== -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="glass-card-elevated cta-banner fade-in">
+          <h2 data-i18n="upgrade.cta.title">Bereit loszulegen?</h2>
+          <p class="cta-subtitle" data-i18n="upgrade.cta.subtitle">14 Tage kostenlos. Keine Kreditkarte n&ouml;tig.</p>
+          <div class="cta-actions">
+            <a href="/register.html" class="btn btn-gradient" data-i18n="upgrade.cta.button">Jetzt kostenlos starten</a>
+            <a href="/#pricing" class="btn btn-ghost" data-i18n="nav.pricing">Preise vergleichen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo" aria-label="Financer">
+            <img src="/logo.png" alt="Financer" height="22">
+          </a>
+          <span class="footer-copy">&copy; 2026 Financer &middot; <span data-i18n="footer.made">Made in Wien</span></span>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-col">
+            <span class="footer-heading" data-i18n="footer.product">Produkt</span>
+            <a href="/#features" data-i18n="nav.features">Features</a>
+            <a href="/#demo" data-i18n="nav.demo">Demo</a>
+            <a href="/#pricing" data-i18n="nav.pricing">Preise</a>
+            <a href="/upgrade.html" data-i18n="footer.upgrade">Upgrade</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-heading" data-i18n="footer.resources">Ressourcen</span>
+            <a href="https://docs.getfinancer.com" target="_blank" rel="noopener" data-i18n="footer.docs">Dokumentation</a>
+            <a href="https://github.com/GetFinancer/financer" target="_blank" rel="noopener" data-i18n="footer.github">GitHub</a>
+            <a href="https://financer.getbugio.com" target="_blank" rel="noopener" data-i18n="footer.feedback">Feedback</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-heading" data-i18n="footer.legal">Rechtliches</span>
+            <a href="/impressum.html" data-i18n="footer.impressum">Impressum</a>
+            <a href="/datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
