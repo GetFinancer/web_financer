@@ -116,6 +116,33 @@
   border-bottom: 1px solid hsl(var(--glass-border));
 }
 
+/* --- Gradient Utilities --- */
+.nav-item-active {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  color: hsl(var(--primary-foreground));
+}
+
+.upgrade-gradient {
+  background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--primary)) 100%);
+  color: hsl(var(--primary-foreground));
+}
+
+/* --- KPI Card --- */
+.kpi-card {
+  background: hsl(var(--glass-bg));
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid hsl(var(--glass-border));
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.light .kpi-card {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
 /* --- Scrollbar --- */
 ::-webkit-scrollbar {
   width: 8px;

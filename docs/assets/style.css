@@ -138,6 +138,21 @@ a:hover {
   color: #fff;
 }
 
+.header-links a.btn-upgrade {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-weight: 600;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.header-links a.btn-upgrade:hover {
+  opacity: 0.9;
+  color: white;
+}
+
 /* Mobile menu toggle */
 .menu-toggle {
   display: none;
@@ -225,6 +240,8 @@ a:hover {
   border-left-color: var(--primary);
   background: var(--primary-light);
   font-weight: 500;
+  background: linear-gradient(90deg, rgba(59,130,246,0.12) 0%, rgba(139,92,246,0.06) 100%);
+  border-left-color: var(--primary);
 }
 
 /* Content */
