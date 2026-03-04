@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-de="Changelog – Financer Docs" data-en="Changelog – Financer Docs">Changelog – Financer Docs</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .changelog-version {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 2.5rem 0 0.75rem;
+    }
+    .changelog-version h2 {
+      margin: 0;
+    }
+    .changelog-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 99px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .badge-latest {
+      background: var(--primary, #3b82f6);
+      color: #fff;
+    }
+    .badge-date {
+      font-size: 0.8rem;
+      color: var(--text-muted, #888);
+      font-weight: 400;
+    }
+    .changelog-entry {
+      border-left: 2px solid var(--border, #2a2a2a);
+      padding-left: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .changelog-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-right: 6px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .tag-new { background: #1a3a2a; color: #4ade80; }
+    .tag-improved { background: #1a2a3a; color: #60a5fa; }
+    .tag-fixed { background: #3a1a1a; color: #f87171; }
+    .tag-security { background: #2a1a3a; color: #c084fc; }
+    .changelog-item {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border-subtle, #1a1a1a);
+    }
+    .changelog-item:last-child { border-bottom: none; }
+    .changelog-item p { margin: 0; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menü">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="../index.html" class="header-logo">
+        <img src="../assets/logo.png" alt="Financer">
+        <span>Docs</span>
+      </a>
+    </div>
+    <div class="header-links">
+      <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" aria-label="Theme wechseln / Toggle theme">
+        <svg class="theme-icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:none"><circle cx="12" cy="12" r="5" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="theme-icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+      <a href="https://getfinancer.com/upgrade" class="btn-upgrade" target="_blank"><span lang="de">Upgrade</span><span lang="en">Upgrade</span></a>
+      <a href="https://financer.getbugio.com" class="btn-bug" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Erste Schritte</span><span lang="en">Getting Started</span></div>
+      <a href="../index.html" class="sidebar-link"><span lang="de">Übersicht</span><span lang="en">Overview</span></a>
+      <a href="setup.html" class="sidebar-link"><span lang="de">Ersteinrichtung</span><span lang="en">Initial Setup</span></a>
+      <a href="login.html" class="sidebar-link"><span lang="de">Anmeldung &amp; 2FA</span><span lang="en">Login &amp; 2FA</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Bedienung</span><span lang="en">Usage</span></div>
+      <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+      <a href="transactions.html" class="sidebar-link"><span lang="de">Transaktionen</span><span lang="en">Transactions</span></a>
+      <a href="recurring.html" class="sidebar-link"><span lang="de">Daueraufträge</span><span lang="en">Recurring</span></a>
+      <a href="accounts.html" class="sidebar-link"><span lang="de">Konten</span><span lang="en">Accounts</span></a>
+      <a href="categories.html" class="sidebar-link"><span lang="de">Kategorien</span><span lang="en">Categories</span></a>
+      <a href="analytics.html" class="sidebar-link"><span lang="de">Auswertungen</span><span lang="en">Analytics</span></a>
+      <a href="creditcards.html" class="sidebar-link"><span lang="de">Kreditkarten</span><span lang="en">Credit Cards</span></a>
+      <a href="shared-accounts.html" class="sidebar-link"><span lang="de">Geteilte Konten</span><span lang="en">Shared Accounts</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Sonstiges</span><span lang="en">Other</span></div>
+      <a href="settings.html" class="sidebar-link"><span lang="de">Einstellungen</span><span lang="en">Settings</span></a>
+      <a href="changelog.html" class="sidebar-link active">Changelog</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><span lang="de">Hosting &amp; Admin</span><span lang="en">Hosting &amp; Admin</span></div>
+      <a href="selfhosting.html" class="sidebar-link">Self-Hosting</a>
+      <a href="nginx.html" class="sidebar-link">Nginx</a>
+      <a href="admin.html" class="sidebar-link">Admin Panel</a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">Docs</a><span>/</span><span>Changelog</span>
+      </div>
+
+      <h1>Changelog</h1>
+      <p class="lead" lang="de">Alle Änderungen und neuen Features — von neu nach alt.</p>
+      <p class="lead" lang="en">All changes and new features — newest first.</p>
+
+      <!-- ===== v1.6.0 ===== -->
+      <div class="changelog-version">
+        <h2>v1.6.0</h2>
+        <span class="changelog-badge badge-latest" lang="de">Aktuell</span>
+        <span class="changelog-badge badge-latest" lang="en">Latest</span>
+        <span class="changelog-badge badge-date">März 2026 / March 2026</span>
+      </div>
+
+      <div class="changelog-entry">
+
+        <div class="changelog-item">
+          <span class="changelog-tag tag-new" lang="de">Neu</span>
+          <span class="changelog-tag tag-new" lang="en">New</span>
+          <p lang="de"><strong>Geteilte Konten (Cloud)</strong> — Konten können jetzt mit anderen Financer-Nutzern geteilt werden. Beide Parteien können Transaktionen eintragen; im Konto-Modal ist klar ersichtlich, wer welche Buchung vorgenommen hat.</p>
+          <p lang="en"><strong>Shared Accounts (Cloud)</strong> — Accounts can now be shared with other Financer users. Both parties can add transactions; the account modal clearly shows who made which booking.</p>
+        </div>
+
+        <div class="changelog-item">
+          <span class="changelog-tag tag-new" lang="de">Neu</span>
+          <span class="changelog-tag tag-new" lang="en">New</span>
+          <p lang="de"><strong>Splitwise-Modus</strong> — Gemeinsame Ausgaben lassen sich per Klick aufteilen (gleichmäßig oder individuell). Die Bilanz zeigt jederzeit, wer wem wie viel schuldet. Mit „Schulden begleichen" wird der Ausgleich als Transaktion verbucht.</p>
+          <p lang="en"><strong>Splitwise Mode</strong> — Shared expenses can be split with one click (equal or custom). The balance always shows who owes whom how much. "Settle Up" books the settlement as a transaction automatically.</p>
+        </div>
+
+        <div class="changelog-item">
+          <span class="changelog-tag tag-new" lang="de">Neu</span>
+          <span class="changelog-tag tag-new" lang="en">New</span>
+          <p lang="de"><strong>Einladungssystem</strong> — Einladungen per Link (48h gültig, einmalig verwendbar). Mitglieder können jederzeit vom Kontoinhaber entfernt werden.</p>
+          <p lang="en"><strong>Invite System</strong> — Invitations via link (valid 48h, single-use). Members can be removed by the account owner at any time.</p>
+        </div>
+
+        <div class="changelog-item">
+          <span class="changelog-tag tag-new" lang="de">Neu</span>
+          <span class="changelog-tag tag-new" lang="en">New</span>
+          <p lang="de"><strong>Konto-Modal: Tabs nach Person</strong> — Im Konto-Modal gibt es neue Filter-Tabs: „Alle", „Von mir" und „Von [Name]".</p>
+          <p lang="en"><strong>Account Modal: Per-person tabs</strong> — The account modal now has filter tabs: "All", "By me", and "By [Name]".</p>
+        </div>
+
+      </div>
+
+      <!-- ===== v1.5.0 ===== -->
+      <div class="changelog-version">
+        <h2>v1.5.0</h2>
+        <span class="changelog-badge badge-date">2025</span>
+      </div>
+
+      <div class="changelog-entry">
+
+        <div class="changelog-item">
+          <span class="changelog-tag tag-new" lang="de">Neu</span>
+          <span class="changelog-tag tag-new" lang="en">New</span>
+          <p lang="de"><strong>Kreditkarten-Abrechnung</strong> — Vollständige Kreditkarten-Verwaltung mit Abrechnungszyklen, Zahlungsfristen und verknüpften Bankkonten.</p>
+          <p lang="en"><strong>Credit Card Billing</strong> — Full credit card management with billing cycles, payment deadlines, and linked bank accounts.</p>
+        </div>
+
+        <div class="changelog-item">
+          <span class="changelog-tag tag-new" lang="de">Neu</span>
+          <span class="changelog-tag tag-new" lang="en">New</span>
+          <p lang="de"><strong>Dauerauftrag-Ausnahmen</strong> — Einzelne Instanzen von Daueraufträgen können übersprungen oder mit abweichendem Betrag/Notiz versehen werden.</p>
+          <p lang="en"><strong>Recurring Exceptions</strong> — Individual instances of recurring transactions can be skipped or given a different amount/note.</p>
+        </div>
+
+        <div class="changelog-item">
+          <span class="changelog-tag tag-improved" lang="de">Verbessert</span>
+          <span class="changelog-tag tag-improved" lang="en">Improved</span>
+          <p lang="de"><strong>Zwei-Faktor-Authentifizierung</strong> — 10 verschlüsselte Backup-Codes; Legacy-Codes werden automatisch migriert.</p>
+          <p lang="en"><strong>Two-Factor Authentication</strong> — 10 encrypted backup codes; legacy codes are automatically migrated.</p>
+        </div>
+
+        <div class="changelog-item">
+          <span class="changelog-tag tag-security" lang="de">Sicherheit</span>
+          <span class="changelog-tag tag-security" lang="en">Security</span>
+          <p lang="de"><strong>Rate Limiting</strong> — Anmeldeversuche werden pro IP-Adresse begrenzt (5 Fehlversuche → 15 Minuten Sperre).</p>
+          <p lang="en"><strong>Rate Limiting</strong> — Login attempts are limited per IP address (5 failures → 15-minute lockout).</p>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2026 Financer</span>
+    <div class="footer-links">
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Bug melden</span><span lang="en">Report Bug</span></a>
+      <a href="https://financer.getbugio.com" target="_blank"><span lang="de">Feature anfragen</span><span lang="en">Request Feature</span></a>
+      <a href="mailto:admin@getfinancer.com"><span lang="de">Support kontaktieren</span><span lang="en">Contact Support</span></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+    document.querySelectorAll('.sidebar-link').forEach(function(link) {
+      link.addEventListener('click', function() { if (window.innerWidth <= 768) toggleSidebar(); });
+    });
+    function toggleLang() {
+      var lang = document.documentElement.lang === 'de' ? 'en' : 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+      localStorage.setItem('lang', lang);
+    }
+    (function() {
+      var lang = localStorage.getItem('lang') || 'de';
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'de' ? 'EN' : 'DE';
+      var t = document.querySelector('title');
+      if (t && t.dataset[lang]) document.title = t.dataset[lang];
+    })();
+
+    function toggleTheme() {
+      var isLight = document.documentElement.classList.toggle('light');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      document.querySelector('.theme-icon-sun').style.display = isLight ? 'block' : 'none';
+      document.querySelector('.theme-icon-moon').style.display = isLight ? 'none' : 'block';
+    }
+    (function() {
+      var theme = localStorage.getItem('theme') || 'dark';
+      if (theme === 'light') document.documentElement.classList.add('light');
+      document.addEventListener('DOMContentLoaded', function() {
+        var isLight = document.documentElement.classList.contains('light');
+        document.querySelector('.theme-icon-sun').style.display = isLight ? 'block' : 'none';
+        document.querySelector('.theme-icon-moon').style.display = isLight ? 'none' : 'block';
+      });
+    })();
+  </script>
+</body>
+</html>

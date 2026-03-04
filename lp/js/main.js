@@ -51,6 +51,9 @@ const translations = {
     'feature.analytics.desc': 'Interaktive Diagramme zeigen, wohin dein Geld flie\u00dft. Nach Kategorie oder Zeitraum filtern.',
     'feature.security.title': 'Sicher & Privat',
     'feature.security.desc': 'Passwortschutz mit optionaler Zwei-Faktor-Authentifizierung. Deine Daten geh\u00f6ren nur dir.',
+    'feature.shared.title': 'Geteilte Konten',
+    'feature.shared.badge': 'Cloud',
+    'feature.shared.desc': 'Teile Konten mit deinem Partner oder Mitbewohnern. Beide k\u00f6nnen Transaktionen eintragen \u2014 Ausgaben automatisch aufteilen wie mit Splitwise.',
 
     // Demo
     'demo.label': 'Live Demo',
@@ -83,18 +86,21 @@ const translations = {
     'compare.row.backup': 'Backup',
     'compare.row.support': 'Support',
     'compare.row.data': 'Datenspeicherung',
+    'compare.row.shared': 'Geteilte Konten',
     'compare.row.price': 'Preis',
     'compare.cloud.setup': 'Sofort startklar',
     'compare.cloud.updates': 'Automatisch',
     'compare.cloud.backup': 'Inklusive',
     'compare.cloud.support': 'Inklusive',
     'compare.cloud.data': 'EU-Server',
+    'compare.cloud.shared': '\u2713 Inklusive',
     'compare.cloud.price': 'ab 4,99\u20ac/Monat',
     'compare.self.setup': 'Docker erforderlich',
     'compare.self.updates': 'Manuell',
     'compare.self.backup': 'Eigenverantwortung',
     'compare.self.support': 'Community',
     'compare.self.data': 'Dein Server',
+    'compare.self.shared': '\u2717 Nicht verf\u00fcgbar',
     'compare.self.price': 'Kostenlos (MIT)',
     'compare.note': 'Die Self-Hosted Version steht unter der <strong>MIT-Lizenz</strong> \u2014 du kannst den Code frei nutzen, ver\u00e4ndern und verteilen. Kein technisches Wissen? Die Cloud-Version macht es dir einfach.',
 
@@ -119,6 +125,7 @@ const translations = {
     'pricing.cloud.f3': 'T\u00e4gliche Backups',
     'pricing.cloud.f4': 'EU-Server (DSGVO)',
     'pricing.cloud.f5': 'Pers\u00f6nlicher Support',
+    'pricing.cloud.f6': 'Geteilte Konten & Splitwise-Modus',
     'pricing.cloud.cta': '14 Tage kostenlos testen',
 
     // FAQ
@@ -132,6 +139,8 @@ const translations = {
     'faq.a3': 'Die MIT-Lizenz ist eine der freiz\u00fcgigsten Open-Source-Lizenzen. Du darfst den Code kostenlos nutzen, ver\u00e4ndern, verteilen und sogar kommerziell einsetzen. Der vollst\u00e4ndige Quellcode ist auf GitHub einsehbar.',
     'faq.q4': 'Brauche ich technisches Wissen f\u00fcr Self-Hosting?',
     'faq.a4': 'Grundkenntnisse mit Docker und einem Linux-Server sind empfehlenswert. Die Dokumentation f\u00fchrt dich Schritt f\u00fcr Schritt durch die Installation. Wenn du kein technisches Wissen hast, ist die Cloud-Version die einfachste Option.',
+    'faq.q5': 'Wie funktionieren geteilte Konten?',
+    'faq.a5': 'Mit geteilten Konten l\u00e4dst du deinen Partner oder deine Mitbewohner per Einladungslink ein. Alle k\u00f6nnen Transaktionen eintragen \u2014 und sehen, wer was gebucht hat. Der integrierte Splitwise-Modus berechnet automatisch, wer wem wie viel schuldet, und erm\u00f6glicht einfaches Begleichen per Knopfdruck. Geteilte Konten sind ausschlie\u00dflich in der Cloud-Version verf\u00fcgbar.',
 
     // CTA
     'cta.title': '\u00dcbernimm die Kontrolle \u00fcber deine Finanzen',
@@ -328,6 +337,9 @@ const translations = {
     'feature.analytics.desc': 'Interactive charts show where your money goes. Filter by category or time range.',
     'feature.security.title': 'Secure & Private',
     'feature.security.desc': 'Password protection with optional two-factor authentication. Your data belongs to you.',
+    'feature.shared.title': 'Shared Accounts',
+    'feature.shared.badge': 'Cloud',
+    'feature.shared.desc': 'Share accounts with your partner or flatmates. Everyone can add transactions \u2014 split expenses automatically just like Splitwise.',
 
     // Demo
     'demo.label': 'Live Demo',
@@ -360,18 +372,21 @@ const translations = {
     'compare.row.backup': 'Backup',
     'compare.row.support': 'Support',
     'compare.row.data': 'Data Storage',
+    'compare.row.shared': 'Shared Accounts',
     'compare.row.price': 'Price',
     'compare.cloud.setup': 'Instant setup',
     'compare.cloud.updates': 'Automatic',
     'compare.cloud.backup': 'Included',
     'compare.cloud.support': 'Included',
     'compare.cloud.data': 'EU Servers',
+    'compare.cloud.shared': '\u2713 Included',
     'compare.cloud.price': 'from \u20ac4.99/month',
     'compare.self.setup': 'Docker required',
     'compare.self.updates': 'Manual',
     'compare.self.backup': 'Self-managed',
     'compare.self.support': 'Community',
     'compare.self.data': 'Your server',
+    'compare.self.shared': '\u2717 Not available',
     'compare.self.price': 'Free (MIT)',
     'compare.note': 'The Self-Hosted version is released under the <strong>MIT License</strong> \u2014 you can freely use, modify, and distribute the code. No technical knowledge? The Cloud version makes it easy.',
 
@@ -396,6 +411,7 @@ const translations = {
     'pricing.cloud.f3': 'Daily backups',
     'pricing.cloud.f4': 'EU servers (GDPR)',
     'pricing.cloud.f5': 'Personal support',
+    'pricing.cloud.f6': 'Shared accounts & Splitwise mode',
     'pricing.cloud.cta': 'Start your free 14-day trial',
 
     // FAQ
@@ -409,6 +425,8 @@ const translations = {
     'faq.a3': 'The MIT License is one of the most permissive open-source licenses. You can freely use, modify, distribute, and even commercially use the code. The full source code is available on GitHub.',
     'faq.q4': 'Do I need technical knowledge for self-hosting?',
     'faq.a4': 'Basic knowledge of Docker and a Linux server is recommended. The documentation guides you step by step through the installation. If you have no technical knowledge, the cloud version is the easiest option.',
+    'faq.q5': 'How do shared accounts work?',
+    'faq.a5': 'With shared accounts, you invite your partner or flatmates via an invite link. Everyone can add transactions \u2014 and see who booked what. The built-in Splitwise mode automatically calculates who owes whom how much, and lets you settle up with a single tap. Shared accounts are exclusively available in the Cloud version.',
 
     // CTA
     'cta.title': 'Take control of your finances',
