@@ -79,41 +79,85 @@
         <p>Shared accounts are exclusively available in the <strong>Cloud version</strong> of Financer. Self-hosted instances do not support this feature.</p>
       </div>
 
-      <p class="lead" lang="de">Mit geteilten Konten kannst du ein Konto mit deinem Partner, deiner WG oder deiner Familie teilen. Alle Mitglieder können Transaktionen eintragen und sehen, wer was gebucht hat. Der integrierte Splitwise-Modus berechnet automatisch, wer wem wie viel schuldet.</p>
-      <p class="lead" lang="en">Shared accounts let you share an account with your partner, flatmates, or family. All members can add transactions and see who booked what. The built-in Splitwise mode automatically calculates who owes whom how much.</p>
+      <p class="lead" lang="de">Mit geteilten Konten kannst du ein Konto mit deinem Partner, deiner WG oder deiner Familie teilen. Alle Mitglieder können Transaktionen eintragen und sehen, wer was gebucht hat. Im Ausgaben-Pool-Modus werden Ausgaben automatisch aufgeteilt und die Bilanz berechnet.</p>
+      <p class="lead" lang="en">Shared accounts let you share an account with your partner, flatmates, or family. All members can add transactions and see who booked what. In Expense Pool mode, expenses are automatically split and a running balance is calculated.</p>
+
+      <h2><span lang="de">Kontotypen</span><span lang="en">Account Types</span></h2>
+
+      <p lang="de">Beim Teilen eines Kontos wählst du einen von zwei Modi:</p>
+      <p lang="en">When sharing an account, you choose one of two modes:</p>
+
+      <div lang="de">
+        <table>
+          <thead>
+            <tr><th>Typ</th><th>Beschreibung</th><th>Ideal für</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Gemeinsames Konto</strong></td>
+              <td>Beide sehen alle Transaktionen. Keine automatische Aufteilung.</td>
+              <td>Partner, gemeinsames Haushaltskonto</td>
+            </tr>
+            <tr>
+              <td><strong>Ausgaben-Pool</strong></td>
+              <td>Jede Ausgabe kann aufgeteilt werden. Die Bilanz zeigt, wer wem was schuldet.</td>
+              <td>WG, Reisegruppe, geteilte Projekte</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div lang="en">
+        <table>
+          <thead>
+            <tr><th>Type</th><th>Description</th><th>Ideal for</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Joint Account</strong></td>
+              <td>Both see all transactions. No automatic splitting.</td>
+              <td>Partners, shared household account</td>
+            </tr>
+            <tr>
+              <td><strong>Expense Pool</strong></td>
+              <td>Each expense can be split. The balance shows who owes whom what.</td>
+              <td>Flatmates, travel groups, shared projects</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h2><span lang="de">Konto teilen</span><span lang="en">Share an Account</span></h2>
 
       <ol class="steps" lang="de">
-        <li>Öffne das gewünschte Konto über die <strong>Konten</strong>-Seite.</li>
-        <li>Klicke im Konto-Modal auf <strong>&bdquo;Konto teilen&ldquo;</strong>.</li>
-        <li>Es wird ein <strong>Einladungslink</strong> generiert, der 48 Stunden gültig ist.</li>
-        <li>Teile den Link mit der Person, die Zugriff erhalten soll.</li>
+        <li>Öffne <strong>Geteilte Konten</strong> in der Seitenleiste.</li>
+        <li>Klicke auf <strong>&bdquo;Konto teilen&ldquo;</strong> und wähle ein vorhandenes Konto sowie den gewünschten Modus.</li>
+        <li>Im Konto-Modal auf <strong>&bdquo;Einladung erstellen&ldquo;</strong> klicken. Wähle optional die Gültigkeitsdauer (24 h, 48 h, 7 Tage, 30 Tage oder unbegrenzt).</li>
+        <li>Teile den generierten Link mit der einzuladenden Person.</li>
         <li>Die eingeladene Person öffnet den Link in ihrem Financer-Account und bestätigt die Einladung.</li>
-        <li>Ab sofort sehen beide Parteien das Konto und alle zugehörigen Transaktionen.</li>
+        <li>Ab sofort erscheint das Konto auch bei dem neuen Mitglied unter <strong>Geteilte Konten</strong>.</li>
       </ol>
       <ol class="steps" lang="en">
-        <li>Open the desired account via the <strong>Accounts</strong> page.</li>
-        <li>Click <strong>"Share Account"</strong> in the account modal.</li>
-        <li>An <strong>invite link</strong> is generated, valid for 48 hours.</li>
-        <li>Share the link with the person who should get access.</li>
+        <li>Open <strong>Shared Accounts</strong> in the sidebar.</li>
+        <li>Click <strong>"Share Account"</strong>, select an existing account and the desired mode.</li>
+        <li>Click <strong>"Create Invite"</strong> in the account modal. Optionally choose the validity duration (24 h, 48 h, 7 days, 30 days, or unlimited).</li>
+        <li>Share the generated link with the person you want to invite.</li>
         <li>The invited person opens the link in their Financer account and confirms the invitation.</li>
-        <li>From this point on, both parties can see the account and all its transactions.</li>
+        <li>The account now appears under <strong>Shared Accounts</strong> for the new member as well.</li>
       </ol>
 
       <div class="callout callout-warning" lang="de">
         <div class="callout-title">Hinweis</div>
-        <p>Einladungslinks sind einmalig verwendbar und laufen nach 48 Stunden ab. Erstelle bei Bedarf einen neuen Link.</p>
+        <p>Einladungslinks sind einmalig verwendbar. Nach Ablauf der gewählten Gültigkeitsdauer muss ein neuer Link erstellt werden.</p>
       </div>
       <div class="callout callout-warning" lang="en">
         <div class="callout-title">Note</div>
-        <p>Invite links are single-use and expire after 48 hours. Generate a new link if needed.</p>
+        <p>Invite links are single-use. Once the chosen validity period expires, a new link must be generated.</p>
       </div>
 
       <h2><span lang="de">Transaktionen im geteilten Konto</span><span lang="en">Transactions in a Shared Account</span></h2>
 
-      <p lang="de">Im Konto-Modal siehst du für geteilte Konten drei Tabs:</p>
-      <p lang="en">In the account modal, shared accounts show three tabs:</p>
+      <p lang="de">Transaktionen auf einem geteilten Konto werden wie gewohnt über die <strong>Transaktionen</strong>-Seite erfasst — das Konto ist dort in der Kontoliste verfügbar. Im Konto-Modal (Geteilte Konten → Konto öffnen) siehst du alle Transaktionen mit drei Filter-Tabs:</p>
+      <p lang="en">Transactions on a shared account are entered as usual via the <strong>Transactions</strong> page — the account is available in the account list there. In the account modal (Shared Accounts → open account) you see all transactions with three filter tabs:</p>
 
       <div lang="de">
         <table>
@@ -140,92 +184,67 @@
         </table>
       </div>
 
-      <p lang="de">Jede Transaktion zeigt ein farbiges Kürzel oder Avatar, das angibt, wer sie eingetragen hat.</p>
-      <p lang="en">Each transaction shows a colored badge or avatar indicating who entered it.</p>
+      <h2><span lang="de">Ausgaben aufteilen (Ausgaben-Pool)</span><span lang="en">Splitting Expenses (Expense Pool)</span></h2>
 
-      <h2><span lang="de">Splitwise-Modus</span><span lang="en">Splitwise Mode</span></h2>
+      <p lang="de">Im <strong>Ausgaben-Pool</strong>-Modus kann jede Ausgabe aufgeteilt werden. Klicke in der Transaktionsliste des Konto-Modals auf <strong>&bdquo;Aufteilen&ldquo;</strong> neben einer Ausgabe:</p>
+      <p lang="en">In <strong>Expense Pool</strong> mode, each expense can be split. Click <strong>"Split"</strong> next to an expense in the account modal's transaction list:</p>
 
-      <p lang="de">Der Splitwise-Modus ermöglicht es, gemeinsame Ausgaben fair aufzuteilen und offene Beträge zu begleichen — ähnlich wie die App Splitwise.</p>
-      <p lang="en">Splitwise mode lets you fairly split shared expenses and settle outstanding amounts — similar to the Splitwise app.</p>
+      <ul lang="de">
+        <li>Jedes Mitglied wird als Karte angezeigt: Name, Zahler-Badge (wer hat bezahlt) und Betrag.</li>
+        <li>Der <strong>Zahler</strong> behält automatisch den Restbetrag (Gesamtsumme minus alle anderen Anteile).</li>
+        <li><strong>„Gleichmäßig"</strong> teilt den Betrag zu gleichen Teilen auf alle Mitglieder auf.</li>
+        <li>Einzelne Anteile können manuell eingegeben werden.</li>
+        <li>Begleichene Anteile werden grün markiert und sind gesperrt.</li>
+      </ul>
+      <ul lang="en">
+        <li>Each member is shown as a card: name, payer badge (who paid), and amount.</li>
+        <li>The <strong>payer</strong> automatically keeps the remainder (total minus all other shares).</li>
+        <li><strong>"Equal"</strong> splits the amount evenly among all members.</li>
+        <li>Individual shares can be entered manually.</li>
+        <li>Settled shares are highlighted green and locked.</li>
+      </ul>
 
-      <h3><span lang="de">Ausgabe hinzufügen</span><span lang="en">Add an Expense</span></h3>
+      <h2><span lang="de">Bilanz &amp; Schulden begleichen</span><span lang="en">Balance &amp; Settling Up</span></h2>
 
-      <ol class="steps" lang="de">
-        <li>Klicke im geteilten Konto auf <strong>&bdquo;Ausgabe teilen&ldquo;</strong>.</li>
-        <li>Gib Betrag, Beschreibung und Datum ein.</li>
-        <li>Wähle, wer die Ausgabe <strong>bezahlt</strong> hat.</li>
-        <li>Lege die <strong>Aufteilung</strong> fest: gleichmäßig oder individuell.</li>
-        <li>Klicke auf <strong>&bdquo;Speichern&ldquo;</strong>.</li>
-      </ol>
-      <ol class="steps" lang="en">
-        <li>Click <strong>"Split Expense"</strong> in the shared account.</li>
-        <li>Enter the amount, description, and date.</li>
-        <li>Select who <strong>paid</strong> the expense.</li>
-        <li>Set the <strong>split</strong>: equal or custom amounts.</li>
-        <li>Click <strong>"Save"</strong>.</li>
-      </ol>
-
-      <h3><span lang="de">Aufteilungsarten</span><span lang="en">Split Types</span></h3>
+      <p lang="de">Auf der <strong>Geteilte Konten</strong>-Seite siehst du zwei Abschnitte:</p>
+      <p lang="en">On the <strong>Shared Accounts</strong> page you see two sections:</p>
 
       <div lang="de">
         <table>
           <thead>
-            <tr><th>Typ</th><th>Beschreibung</th><th>Beispiel</th></tr>
+            <tr><th>Abschnitt</th><th>Bedeutung</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>Gleichmäßig</strong></td><td>Betrag wird zu gleichen Teilen aufgeteilt.</td><td>90€ ÷ 3 = je 30€</td></tr>
-            <tr><td><strong>Individuell</strong></td><td>Jede Person zahlt einen selbst festgelegten Betrag.</td><td>60€ / 20€ / 10€</td></tr>
+            <tr><td><strong>Schulde ich</strong></td><td>Personen, denen du Geld schuldest (du bist Schuldner).</td></tr>
+            <tr><td><strong>Schuldet mir</strong></td><td>Personen, die dir Geld schulden (du bist Gläubiger).</td></tr>
           </tbody>
         </table>
       </div>
       <div lang="en">
         <table>
           <thead>
-            <tr><th>Type</th><th>Description</th><th>Example</th></tr>
+            <tr><th>Section</th><th>Meaning</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>Equal</strong></td><td>Amount is split into equal shares.</td><td>€90 ÷ 3 = €30 each</td></tr>
-            <tr><td><strong>Custom</strong></td><td>Each person pays a manually set amount.</td><td>€60 / €20 / €10</td></tr>
+            <tr><td><strong>I owe</strong></td><td>People you owe money to (you are the debtor).</td></tr>
+            <tr><td><strong>They owe me</strong></td><td>People who owe you money (you are the creditor).</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h3><span lang="de">Bilanz &amp; Schulden begleichen</span><span lang="en">Balance &amp; Settling Up</span></h3>
+      <p lang="de">Jeder Eintrag zeigt den <strong>Nettobetrag</strong> über alle geteilten Konten. Ein Klick auf den Pfeil öffnet die aufklappbare Aufschlüsselung, die zeigt, aus welchen Ausgaben sich der Betrag zusammensetzt.</p>
+      <p lang="en">Each entry shows the <strong>net amount</strong> across all shared accounts. Clicking the arrow opens the expandable breakdown showing which expenses make up the total.</p>
 
-      <p lang="de">Die <strong>Bilanz</strong> zeigt jederzeit, wer wem wie viel schuldet:</p>
-      <p lang="en">The <strong>balance</strong> always shows who owes whom how much:</p>
+      <p lang="de">Klicke auf <strong>&bdquo;Begleichen&ldquo;</strong>, um eine Ausgleichszahlung zu erfassen. Financer verrechnet dabei automatisch alle gegenseitigen Schulden über alle geteilten Konten (Cross-Pool-Netting) und bucht nur den tatsächlichen Differenzbetrag.</p>
+      <p lang="en">Click <strong>"Settle Up"</strong> to record a settlement payment. Financer automatically nets all mutual debts across all shared accounts (cross-pool netting) and books only the actual net difference.</p>
 
-      <ul lang="de">
-        <li><strong>Positiver Betrag:</strong> Dir wird Geld geschuldet.</li>
-        <li><strong>Negativer Betrag:</strong> Du schuldest Geld.</li>
-        <li>Die Netto-Position ergibt sich aus allen offenen Ausgaben.</li>
-      </ul>
-      <ul lang="en">
-        <li><strong>Positive amount:</strong> Money is owed to you.</li>
-        <li><strong>Negative amount:</strong> You owe money.</li>
-        <li>The net position results from all outstanding expenses.</li>
-      </ul>
+      <h2><span lang="de">Mitglied entfernen / Konto verlassen</span><span lang="en">Remove a Member / Leave an Account</span></h2>
 
-      <p lang="de">Klicke auf <strong>&bdquo;Schulden begleichen&ldquo;</strong>, um eine Ausgleichszahlung zu erfassen. Diese wird automatisch als Transaktion auf dem Konto verbucht und die Bilanz auf null gesetzt.</p>
-      <p lang="en">Click <strong>"Settle Up"</strong> to record a settlement payment. This is automatically booked as a transaction on the account and resets the balance to zero.</p>
+      <p lang="de">Der <strong>Kontoinhaber</strong> kann jederzeit ein Mitglied entfernen: Im Konto-Modal das Mitglied über das × neben dem Namen entfernen. Das Mitglied verliert sofort den Zugriff.</p>
+      <p lang="en">The <strong>account owner</strong> can remove a member at any time: in the account modal, remove the member via the × next to their name. The member loses access immediately.</p>
 
-      <h2><span lang="de">Mitglied entfernen / Zugriff widerrufen</span><span lang="en">Remove a Member / Revoke Access</span></h2>
-
-      <p lang="de">Der Kontoinhaber (Owner) kann jederzeit den Zugriff eines Mitglieds widerrufen:</p>
-      <p lang="en">The account owner can revoke a member's access at any time:</p>
-
-      <ol class="steps" lang="de">
-        <li>Öffne das Konto-Modal.</li>
-        <li>Wechsle zum Tab <strong>&bdquo;Mitglieder&ldquo;</strong>.</li>
-        <li>Klicke neben dem Mitglied auf <strong>&bdquo;Entfernen&ldquo;</strong>.</li>
-        <li>Das Mitglied verliert sofort den Zugriff auf das Konto.</li>
-      </ol>
-      <ol class="steps" lang="en">
-        <li>Open the account modal.</li>
-        <li>Switch to the <strong>"Members"</strong> tab.</li>
-        <li>Click <strong>"Remove"</strong> next to the member.</li>
-        <li>The member immediately loses access to the account.</li>
-      </ol>
+      <p lang="de"><strong>Mitglieder</strong> können das Konto selbst verlassen: Im Konto-Modal auf <strong>&bdquo;Konto verlassen&ldquo;</strong> klicken.</p>
+      <p lang="en"><strong>Members</strong> can leave the account themselves: click <strong>"Leave Account"</strong> in the account modal.</p>
 
       <div class="callout callout-tip" lang="de">
         <div class="callout-title">Tipp</div>

@@ -141,29 +141,36 @@
         <div class="changelog-item">
           <span class="changelog-tag tag-new" lang="de">Neu</span>
           <span class="changelog-tag tag-new" lang="en">New</span>
-          <p lang="de"><strong>Geteilte Konten (Cloud)</strong> — Konten können jetzt mit anderen Financer-Nutzern geteilt werden. Beide Parteien können Transaktionen eintragen; im Konto-Modal ist klar ersichtlich, wer welche Buchung vorgenommen hat.</p>
-          <p lang="en"><strong>Shared Accounts (Cloud)</strong> — Accounts can now be shared with other Financer users. Both parties can add transactions; the account modal clearly shows who made which booking.</p>
+          <p lang="de"><strong>Geteilte Konten (Cloud)</strong> — Konten können jetzt mit anderen Financer-Nutzern geteilt werden. Zwei Modi: <em>Gemeinsames Konto</em> (beide sehen alle Transaktionen) und <em>Ausgaben-Pool</em> (mit Aufteilung und Bilanz).</p>
+          <p lang="en"><strong>Shared Accounts (Cloud)</strong> — Accounts can now be shared with other Financer users. Two modes: <em>Joint Account</em> (both see all transactions) and <em>Expense Pool</em> (with splitting and balance).</p>
         </div>
 
         <div class="changelog-item">
           <span class="changelog-tag tag-new" lang="de">Neu</span>
           <span class="changelog-tag tag-new" lang="en">New</span>
-          <p lang="de"><strong>Splitwise-Modus</strong> — Gemeinsame Ausgaben lassen sich per Klick aufteilen (gleichmäßig oder individuell). Die Bilanz zeigt jederzeit, wer wem wie viel schuldet. Mit „Schulden begleichen" wird der Ausgleich als Transaktion verbucht.</p>
-          <p lang="en"><strong>Splitwise Mode</strong> — Shared expenses can be split with one click (equal or custom). The balance always shows who owes whom how much. "Settle Up" books the settlement as a transaction automatically.</p>
+          <p lang="de"><strong>Ausgaben aufteilen</strong> — Im Ausgaben-Pool können Ausgaben gleichmäßig oder individuell aufgeteilt werden. Der Zahler behält automatisch den Restbetrag; beglichene Anteile sind gesperrt.</p>
+          <p lang="en"><strong>Expense splitting</strong> — In Expense Pool mode, expenses can be split equally or with custom amounts. The payer automatically keeps the remainder; settled shares are locked.</p>
         </div>
 
         <div class="changelog-item">
           <span class="changelog-tag tag-new" lang="de">Neu</span>
           <span class="changelog-tag tag-new" lang="en">New</span>
-          <p lang="de"><strong>Einladungssystem</strong> — Einladungen per Link (48h gültig, einmalig verwendbar). Mitglieder können jederzeit vom Kontoinhaber entfernt werden.</p>
-          <p lang="en"><strong>Invite System</strong> — Invitations via link (valid 48h, single-use). Members can be removed by the account owner at any time.</p>
+          <p lang="de"><strong>Schulden-Übersicht &amp; Begleichen</strong> — Die Geteilte-Konten-Seite zeigt „Schulde ich" und „Schuldet mir" mit aufklappbarer Aufschlüsselung. Beim Begleichen werden alle gegenseitigen Schulden über alle Konten automatisch verrechnet (Cross-Pool-Netting).</p>
+          <p lang="en"><strong>Debt overview &amp; settle up</strong> — The Shared Accounts page shows "I owe" and "They owe me" with an expandable breakdown. Settlement automatically nets all mutual debts across all accounts (cross-pool netting).</p>
         </div>
 
         <div class="changelog-item">
           <span class="changelog-tag tag-new" lang="de">Neu</span>
           <span class="changelog-tag tag-new" lang="en">New</span>
-          <p lang="de"><strong>Konto-Modal: Tabs nach Person</strong> — Im Konto-Modal gibt es neue Filter-Tabs: „Alle", „Von mir" und „Von [Name]".</p>
-          <p lang="en"><strong>Account Modal: Per-person tabs</strong> — The account modal now has filter tabs: "All", "By me", and "By [Name]".</p>
+          <p lang="de"><strong>Einladungssystem</strong> — Einladungen per Link, einmalig verwendbar. Gültigkeitsdauer wählbar: 24 h, 48 h, 7 Tage, 30 Tage oder unbegrenzt.</p>
+          <p lang="en"><strong>Invite system</strong> — Invitations via single-use link. Configurable validity: 24 h, 48 h, 7 days, 30 days, or unlimited.</p>
+        </div>
+
+        <div class="changelog-item">
+          <span class="changelog-tag tag-improved" lang="de">Verbessert</span>
+          <span class="changelog-tag tag-improved" lang="en">Improved</span>
+          <p lang="de"><strong>Kontolöschung</strong> — Umbuchungen auf einem gelöschten Konto bleiben auf dem verbleibenden Konto erhalten und werden als Einnahme oder Ausgabe umgewandelt.</p>
+          <p lang="en"><strong>Account deletion</strong> — Transfers on a deleted account are preserved on the remaining account and converted to income or expense.</p>
         </div>
 
       </div>
@@ -171,7 +178,7 @@
       <!-- ===== v1.5.0 ===== -->
       <div class="changelog-version">
         <h2>v1.5.0</h2>
-        <span class="changelog-badge badge-date">2025</span>
+        <span class="changelog-badge badge-date">März 2026 / March 2026</span>
       </div>
 
       <div class="changelog-entry">
@@ -179,29 +186,22 @@
         <div class="changelog-item">
           <span class="changelog-tag tag-new" lang="de">Neu</span>
           <span class="changelog-tag tag-new" lang="en">New</span>
-          <p lang="de"><strong>Kreditkarten-Abrechnung</strong> — Vollständige Kreditkarten-Verwaltung mit Abrechnungszyklen, Zahlungsfristen und verknüpften Bankkonten.</p>
-          <p lang="en"><strong>Credit Card Billing</strong> — Full credit card management with billing cycles, payment deadlines, and linked bank accounts.</p>
+          <p lang="de"><strong>Zwei-Faktor-Authentifizierung (TOTP)</strong> — Anmeldung mit Authenticator-App und 10 Backup-Codes absichern.</p>
+          <p lang="en"><strong>Two-factor authentication (TOTP)</strong> — Secure your login with an authenticator app and 10 backup codes.</p>
         </div>
 
         <div class="changelog-item">
           <span class="changelog-tag tag-new" lang="de">Neu</span>
           <span class="changelog-tag tag-new" lang="en">New</span>
-          <p lang="de"><strong>Dauerauftrag-Ausnahmen</strong> — Einzelne Instanzen von Daueraufträgen können übersprungen oder mit abweichendem Betrag/Notiz versehen werden.</p>
-          <p lang="en"><strong>Recurring Exceptions</strong> — Individual instances of recurring transactions can be skipped or given a different amount/note.</p>
+          <p lang="de"><strong>Release-Notes-Popup</strong> — Bei neuen Versionen erscheint automatisch ein Popup mit den Neuerungen.</p>
+          <p lang="en"><strong>Release notes popup</strong> — A popup with the latest changes appears automatically after updates.</p>
         </div>
 
         <div class="changelog-item">
           <span class="changelog-tag tag-improved" lang="de">Verbessert</span>
           <span class="changelog-tag tag-improved" lang="en">Improved</span>
-          <p lang="de"><strong>Zwei-Faktor-Authentifizierung</strong> — 10 verschlüsselte Backup-Codes; Legacy-Codes werden automatisch migriert.</p>
-          <p lang="en"><strong>Two-Factor Authentication</strong> — 10 encrypted backup codes; legacy codes are automatically migrated.</p>
-        </div>
-
-        <div class="changelog-item">
-          <span class="changelog-tag tag-security" lang="de">Sicherheit</span>
-          <span class="changelog-tag tag-security" lang="en">Security</span>
-          <p lang="de"><strong>Rate Limiting</strong> — Anmeldeversuche werden pro IP-Adresse begrenzt (5 Fehlversuche → 15 Minuten Sperre).</p>
-          <p lang="en"><strong>Rate Limiting</strong> — Login attempts are limited per IP address (5 failures → 15-minute lockout).</p>
+          <p lang="de"><strong>Sicherheit</strong> — Verbesserte Passwort-Validierung, Rate Limiting und sichere Speicherung von Backup-Codes.</p>
+          <p lang="en"><strong>Security</strong> — Improved password validation, rate limiting, and secure storage of backup codes.</p>
         </div>
 
       </div>
