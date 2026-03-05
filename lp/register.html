@@ -375,7 +375,10 @@
     function checkAvailability(name) {
       lastCheckedName = name;
       fetch('/api/register/check/' + encodeURIComponent(name))
-        .then(function(r) { return r.json(); })
+        .then(function(r) {
+          if (!r.ok) throw new Error('http_' + r.status);
+          return r.json();
+        })
         .then(function(data) {
           if (tenantInput.value.toLowerCase() !== name) return;
           if (data.success && data.data.available) {
@@ -393,7 +396,9 @@
           }
         })
         .catch(function() {
-          inputHint.className = 'input-hint error';
+          if (tenantInput.value.toLowerCase() !== name) return;
+          inputWrapper.className = 'input-wrapper';
+          inputHint.className = 'input-hint info';
           inputHint.innerHTML = '<span>' + t('register.error.network') + '</span>';
         });
     }
